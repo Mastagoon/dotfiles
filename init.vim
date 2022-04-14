@@ -24,18 +24,24 @@ Plug 'lukas-reineke/lsp-format.nvim'
 Plug 'itchyny/vim-gitbranch'
 Plug 'preservim/NERDTree'
 Plug 'https://github.com/vim-airline/vim-airline'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+"Plug 'junegunn/fzf.vim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
 Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' }
 Plug 'xiyaowong/nvim-transparent'
+Plug 'norcalli/nvim-colorizer.lua'
+Plug 'jghauser/mkdir.nvim'
+Plug 'stevearc/dressing.nvim'
+Plug 'toppair/reach.nvim'
+Plug 'akinsho/toggleterm.nvim'
 call plug#end()
 
 let mapleader = " "
-
 if(has("termguicolors"))
 	set termguicolors
 endif
@@ -49,23 +55,23 @@ inoremap ` ``<Esc>ha
 
 nnoremap <C-b> :NERDTreeToggle<CR>
 nnoremap <C-i> :PlugInstall<CR>
+nnoremap <Tab> :tabnext<CR>
 
 " fzf
-nnoremap <C-e> :GFiles<CR>
+nnoremap <C-e> :Telescope find_files<CR>
 
 colorscheme codedark
 
 " vim-maximizer
 nnoremap <leader>m :MaximizerToggle!<CR>
 
-let g:neoterm_default_mod = 'vertical'
-let g:neoterm_size = 60
+let g:neoterm_default_mod = 'botright'
+let g:neoterm_size = 10
 let g:neoterm_autoinsert = 1
 map ` <Nop>
 nnoremap <C-s> :w<CR>
-nnoremap <C-q> :Ttoggle<CR>
-inoremap <C-q> <Esc> :Ttoggle<CR>
-
+nnoremap <C-q> :ToggleTerm<CR>
+""inoremap <C-q> <Esc> :Ttoggle<CR>
 
 nnoremap <leader>F :Neoformat prettier<CR>
 
@@ -86,3 +92,9 @@ lua require "lspconfig".tsserver.setup { on_attach = require "lsp-format".on_att
 
 " transparent
 let g:transparent_enabled = v:true
+
+" colors
+lua require'colorizer'.setup()
+
+"switched 
+lua require('reach').setup({ notifications = true })
