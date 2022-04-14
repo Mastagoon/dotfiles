@@ -71,7 +71,8 @@ let g:neoterm_autoinsert = 1
 map ` <Nop>
 nnoremap <C-s> :w<CR>
 nnoremap <C-q> :ToggleTerm<CR>
-""inoremap <C-q> <Esc> :Ttoggle<CR>
+nnoremap <leader>q :ToggleTerm direction="float"<CR>
+nnoremap <leader><C-Q> :ToggleTermToggleAll<CR>
 
 nnoremap <leader>F :Neoformat prettier<CR>
 
