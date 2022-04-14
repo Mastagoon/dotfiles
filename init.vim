@@ -1,3 +1,4 @@
+:set clipboard+=unnamedplus
 :set completeopt=menuone,noinsert,noselect
 :set number
 :set autoindent
@@ -23,7 +24,8 @@ Plug 'tpope/vim-commentary'
 Plug 'lukas-reineke/lsp-format.nvim'
 Plug 'itchyny/vim-gitbranch'
 Plug 'preservim/NERDTree'
-Plug 'https://github.com/vim-airline/vim-airline'
+""Plug 'https://github.com/vim-airline/vim-airline'
+Plug 'feline-nvim/feline.nvim'
 "Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 "Plug 'junegunn/fzf.vim'
 Plug 'nvim-lua/plenary.nvim'
@@ -99,3 +101,6 @@ lua require'colorizer'.setup()
 
 "switched 
 lua require('reach').setup({ notifications = true })
+
+"feeline
+lua require('feline').setup()
