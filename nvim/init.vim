@@ -24,12 +24,14 @@ Plug 'tpope/vim-commentary'
 Plug 'lukas-reineke/lsp-format.nvim'
 Plug 'itchyny/vim-gitbranch'
 Plug 'preservim/NERDTree'
-""Plug 'https://github.com/vim-airline/vim-airline'
-Plug 'feline-nvim/feline.nvim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+""Plug 'feline-nvim/feline.nvim'
 "Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 "Plug 'junegunn/fzf.vim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'neovim/nvim-lspconfig'
@@ -61,8 +63,9 @@ nnoremap <C-i> :PlugInstall<CR>
 nnoremap <Tab> :tabnext<CR>
 
 " fzf
-nnoremap <C-e> :Telescope find_files<CR>
+nnoremap <C-e> :Telescope file_browser<CR>
 nnoremap <C-f> :Telescope live_grep<CR>
+lua require("telescope").load_extension "file_browser"
 
 colorscheme codedark
 
@@ -105,12 +108,13 @@ lua require'colorizer'.setup()
 "switched 
 lua require('reach').setup({ notifications = true })
 
-"feeline
-lua require('feline').setup()
-
 "search current word
 nnoremap <leader>s <cmd>lua require('spectre').open_visual({select_word=true})<CR>
 vnoremap <leader>s <cmd>lua require('spectre').open_visual()<CR>
 "  search in current file
 nnoremap <leader>sp viw:lua require('spectre').open_file_search()<cr>
 " run command :Spectr
+"
+" airline
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
