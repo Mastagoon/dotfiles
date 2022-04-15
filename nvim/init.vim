@@ -56,7 +56,7 @@ inoremap " ""<Esc>ha
 inoremap ' ''<Esc>ha
 inoremap ` ``<Esc>ha
 
-nnoremap <C-b> :NERDTreeToggle<CR>
+""nnoremap <C-b> :NERDTreeToggle<CR>
 nnoremap <C-i> :PlugInstall<CR>
 nnoremap <Tab> :tabnext<CR>
 
@@ -69,6 +69,7 @@ colorscheme codedark
 " vim-maximizer
 nnoremap <leader>m :MaximizerToggle!<CR>
 
+lua require("tterm")
 let g:neoterm_default_mod = 'botright'
 let g:neoterm_size = 10
 let g:neoterm_autoinsert = 1
