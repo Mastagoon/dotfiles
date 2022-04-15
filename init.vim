@@ -41,6 +41,7 @@ Plug 'jghauser/mkdir.nvim'
 Plug 'stevearc/dressing.nvim'
 Plug 'toppair/reach.nvim'
 Plug 'akinsho/toggleterm.nvim'
+Plug 'windwp/nvim-spectre'
 call plug#end()
 
 let mapleader = " "
@@ -61,6 +62,7 @@ nnoremap <Tab> :tabnext<CR>
 
 " fzf
 nnoremap <C-e> :Telescope find_files<CR>
+nnoremap <C-f> :Telescope live_grep<CR>
 
 colorscheme codedark
 
@@ -104,3 +106,10 @@ lua require('reach').setup({ notifications = true })
 
 "feeline
 lua require('feline').setup()
+
+"search current word
+nnoremap <leader>s <cmd>lua require('spectre').open_visual({select_word=true})<CR>
+vnoremap <leader>s <cmd>lua require('spectre').open_visual()<CR>
+"  search in current file
+nnoremap <leader>sp viw:lua require('spectre').open_file_search()<cr>
+" run command :Spectr
