@@ -35,8 +35,10 @@ Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'neovim/nvim-lspconfig'
+Plug 'kabouzeid/nvim-lspinstall'
 Plug 'nvim-lua/completion-nvim'
 Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' }
+Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
 Plug 'xiyaowong/nvim-transparent'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'jghauser/mkdir.nvim'
@@ -63,7 +65,8 @@ nnoremap <C-i> :PlugInstall<CR>
 nnoremap <Tab> :tabnext<CR>
 
 " fzf
-nnoremap <C-e> :Telescope file_browser<CR>
+nnoremap <C-e> :Telescope find_files<CR>
+nnoremap <leader><C-e> :Telescope file_browser<CR>
 nnoremap <C-f> :Telescope live_grep<CR>
 lua require("telescope").load_extension "file_browser"
 
