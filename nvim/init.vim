@@ -46,6 +46,8 @@ Plug 'stevearc/dressing.nvim'
 Plug 'toppair/reach.nvim'
 Plug 'akinsho/toggleterm.nvim'
 Plug 'windwp/nvim-spectre'
+Plug 'preservim/nerdcommenter'
+Plug 'github/copilot.vim'
 call plug#end()
 
 let mapleader = " "
@@ -123,6 +125,7 @@ nnoremap <leader>sp viw:lua require('spectre').open_file_search()<cr>
 " airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tagbar#enabled = 1
 
 " coc
 nnoremap <C-.> :CocCommand actions.open<CR>
@@ -130,3 +133,4 @@ inoremap <C-.> :CocCommand actions.open<CR>
 
 "other files
 source $HOME/.config/nvim/config/coc.vim
+source $HOME/.config/nvim/config/commenter.vim
