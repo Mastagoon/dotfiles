@@ -127,3 +127,6 @@ let g:airline#extensions#tabline#enabled = 1
 " coc
 nnoremap <C-.> :CocCommand actions.open<CR>
 inoremap <C-.> :CocCommand actions.open<CR>
+
+"other files
+source $HOME/.config/nvim/config/coc.vim
