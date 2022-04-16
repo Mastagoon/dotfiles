@@ -62,7 +62,8 @@ inoremap ` ``<Esc>ha
 
 ""nnoremap <C-b> :NERDTreeToggle<CR>
 nnoremap <C-i> :PlugInstall<CR>
-nnoremap <Tab> :tabnext<CR>
+nnoremap <Tab> :bnext<CR>
+nnoremap <C-w> :enew<bar>bd #<CR>
 
 " fzf
 nnoremap <C-e> :Telescope find_files<CR>
@@ -81,6 +82,7 @@ let g:neoterm_size = 10
 let g:neoterm_autoinsert = 1
 map ` <Nop>
 nnoremap <C-s> :w<CR>
+inoremap <C-s> <ESC>:w<CR>
 nnoremap <C-q> :ToggleTerm<CR>
 nnoremap <leader>q :ToggleTerm direction="float"<CR>
 nnoremap <leader><C-Q> :ToggleTermToggleAll<CR>
@@ -121,3 +123,7 @@ nnoremap <leader>sp viw:lua require('spectre').open_file_search()<cr>
 " airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+
+" coc
+nnoremap <C-.> :CocCommand actions.open<CR>
+inoremap <C-.> :CocCommand actions.open<CR>
