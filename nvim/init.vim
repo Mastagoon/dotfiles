@@ -50,7 +50,7 @@ Plug 'windwp/nvim-spectre'
 Plug 'preservim/nerdcommenter'
 Plug 'github/copilot.vim'
 Plug 'cristianoliveira/vim-react-html-snippets'
-Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 call plug#end()
 
 let mapleader = " "
