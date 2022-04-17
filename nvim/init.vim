@@ -13,6 +13,7 @@
 :set smartcase
 :set incsearch
 :set hidden
+:set termbidi
 
 call plug#begin()
 Plug 'tomasiser/vim-code-dark'
@@ -48,6 +49,8 @@ Plug 'akinsho/toggleterm.nvim'
 Plug 'windwp/nvim-spectre'
 Plug 'preservim/nerdcommenter'
 Plug 'github/copilot.vim'
+Plug 'cristianoliveira/vim-react-html-snippets'
+Plug 'SirVer/ultisnips'
 call plug#end()
 
 let mapleader = " "
