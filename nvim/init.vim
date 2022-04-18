@@ -51,6 +51,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'github/copilot.vim'
 Plug 'cristianoliveira/vim-react-html-snippets'
 Plug 'honza/vim-snippets'
+Plug 'mattn/emmet-vim'
 call plug#end()
 
 let mapleader = " "
@@ -137,3 +138,7 @@ inoremap <C-.> :CocCommand actions.open<CR>
 "other files
 source $HOME/.config/nvim/config/coc.vim
 source $HOME/.config/nvim/config/commenter.vim
+
+"emmet
+let g:user_emmet_leader_key='<C-]>'
+
