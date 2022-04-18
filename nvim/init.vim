@@ -49,7 +49,6 @@ Plug 'akinsho/toggleterm.nvim'
 Plug 'windwp/nvim-spectre'
 Plug 'preservim/nerdcommenter'
 Plug 'github/copilot.vim'
-Plug 'cristianoliveira/vim-react-html-snippets'
 Plug 'honza/vim-snippets'
 Plug 'mattn/emmet-vim'
 call plug#end()
