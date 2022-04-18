@@ -52,6 +52,7 @@ Plug 'github/copilot.vim'
 Plug 'honza/vim-snippets'
 Plug 'mattn/emmet-vim'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'Raimondi/delimitMate'
 call plug#end()
 
 let mapleader = " "
@@ -59,12 +60,12 @@ if(has("termguicolors"))
 	set termguicolors
 endif
 
-inoremap { {}<Esc>ha
-inoremap ( ()<Esc>ha
-inoremap [ []<Esc>ha
-inoremap " ""<Esc>ha
-inoremap ' ''<Esc>ha
-inoremap ` ``<Esc>ha
+" inoremap { {}<Esc>ha
+" inoremap ( ()<Esc>ha
+" inoremap [ []<Esc>ha
+" inoremap " ""<Esc>ha
+" inoremap ' ''<Esc>ha
+" inoremap ` ``<Esc>ha
 
 ""nnoremap <C-b> :NERDTreeToggle<CR>
 nnoremap <C-i> :PlugInstall<CR>
