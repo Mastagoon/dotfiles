@@ -51,6 +51,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'github/copilot.vim'
 Plug 'honza/vim-snippets'
 Plug 'mattn/emmet-vim'
+Plug 'terryma/vim-multiple-cursors'
 call plug#end()
 
 let mapleader = " "
