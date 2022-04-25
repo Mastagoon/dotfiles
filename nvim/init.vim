@@ -56,6 +56,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'leafOfTree/vim-svelte-plugin'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
 
 let mapleader = " "
