@@ -70,7 +70,7 @@ endif
 " inoremap ' ''<Esc>ha
 " inoremap ` ``<Esc>ha
 
-map <leader>r :NERDTreeFind<cr>
+nnoremap <C-a> :NERDTreeFind<cr>
 nnoremap <C-B> :NERDTreeToggle<CR>
 nnoremap <C-i> :PlugInstall<CR>
 nnoremap <Tab> :bnext<CR>
