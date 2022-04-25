@@ -1,3 +1,4 @@
+:set encoding=UTF-8
 :set clipboard+=unnamedplus
 :set completeopt=menuone,noinsert,noselect
 :set number
@@ -53,6 +54,8 @@ Plug 'honza/vim-snippets'
 Plug 'mattn/emmet-vim'
 Plug 'Raimondi/delimitMate'
 Plug 'leafOfTree/vim-svelte-plugin'
+Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 call plug#end()
 
 let mapleader = " "
@@ -67,7 +70,8 @@ endif
 " inoremap ' ''<Esc>ha
 " inoremap ` ``<Esc>ha
 
-""nnoremap <C-b> :NERDTreeToggle<CR>
+map <leader>r :NERDTreeFind<cr>
+nnoremap <C-B> :NERDTreeToggle<CR>
 nnoremap <C-i> :PlugInstall<CR>
 nnoremap <Tab> :bnext<CR>
 nnoremap <C-w> :enew<bar>bd #<CR>
@@ -143,3 +147,8 @@ source $HOME/.config/nvim/config/commenter.vim
 "emmet
 let g:user_emmet_leader_key='<C-]>'
 
+
+"icons
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
