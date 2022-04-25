@@ -52,6 +52,7 @@ Plug 'github/copilot.vim'
 Plug 'honza/vim-snippets'
 Plug 'mattn/emmet-vim'
 Plug 'Raimondi/delimitMate'
+Plug 'leafOfTree/vim-svelte-plugin'
 call plug#end()
 
 let mapleader = " "
