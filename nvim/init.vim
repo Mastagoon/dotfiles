@@ -73,6 +73,7 @@ endif
 
 nnoremap <C-a> :NERDTreeFind<cr>
 nnoremap <C-B> :NERDTreeToggle<CR>
+nnoremap <F5> :NERDTreeRefreshRoot<cr>
 nnoremap <C-i> :PlugInstall<CR>
 nnoremap <Tab> :bnext<CR>
 nnoremap <C-w> :enew<bar>bd #<CR>
