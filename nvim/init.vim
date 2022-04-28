@@ -157,3 +157,4 @@ let g:user_emmet_leader_key='<C-]>'
 let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
+let g:NERDTreeimitedSyntax = 1
