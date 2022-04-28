@@ -57,6 +57,8 @@ Plug 'leafOfTree/vim-svelte-plugin'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'nvim-telescope/telescope-media-files.nvim'
+Plug 'nvim-lua/popup.nvim'
 call plug#end()
 
 let mapleader = " "
@@ -83,6 +85,7 @@ nnoremap <C-e> :Telescope find_files<CR>
 nnoremap <leader><C-e> :Telescope file_browser<CR>
 nnoremap <C-f> :Telescope live_grep<CR>
 lua require("telescope").load_extension "file_browser"
+lua require('telescope').load_extension 'media_files'
 
 colorscheme codedark
 
