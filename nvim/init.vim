@@ -14,6 +14,7 @@ let g:clipboard = {
       \ }
 :set completeopt=menuone,noinsert,noselect
 :set number
+:set relativenumber
 :set autoindent
 :set tabstop=4
 :set shiftwidth=4
@@ -27,6 +28,7 @@ let g:clipboard = {
 :set incsearch
 :set hidden
 :set termbidi
+:set signcolumn=yes:1
 
 call plug#begin()
 Plug 'tomasiser/vim-code-dark'
@@ -71,6 +73,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'nvim-telescope/telescope-media-files.nvim'
 Plug 'nvim-lua/popup.nvim'
+Plug 'famiu/nvim-reload'
 call plug#end()
 
 let mapleader = " "
