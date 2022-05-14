@@ -32,13 +32,13 @@ let g:clipboard = {
 
 call plug#begin()
 Plug 'tomasiser/vim-code-dark'
-Plug 'pangloss/vim-javascript'
-Plug 'szw/vim-maximizer'
+" Plug 'pangloss/vim-javascript'
+" Plug 'szw/vim-maximizer'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'kassio/neoterm'
-Plug 'tpope/vim-commentary'
+" Plug 'kassio/neoterm'
+" Plug 'tpope/vim-commentary'
 Plug 'lukas-reineke/lsp-format.nvim'
-Plug 'itchyny/vim-gitbranch'
+" Plug 'itchyny/vim-gitbranch'
 Plug 'preservim/NERDTree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -57,8 +57,8 @@ Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-loc
 Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
 Plug 'xiyaowong/nvim-transparent'
 Plug 'norcalli/nvim-colorizer.lua'
-Plug 'jghauser/mkdir.nvim'
-Plug 'stevearc/dressing.nvim'
+" Plug 'jghauser/mkdir.nvim'
+" Plug 'stevearc/dressing.nvim'
 Plug 'toppair/reach.nvim'
 Plug 'akinsho/toggleterm.nvim'
 Plug 'windwp/nvim-spectre'
@@ -71,7 +71,6 @@ Plug 'leafOfTree/vim-svelte-plugin'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'nvim-telescope/telescope-media-files.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'famiu/nvim-reload'
 call plug#end()
@@ -100,7 +99,6 @@ nnoremap <C-e> :Telescope find_files<CR>
 nnoremap <leader><C-e> :Telescope file_browser<CR>
 nnoremap <C-f> :Telescope live_grep<CR>
 lua require("telescope").load_extension "file_browser"
-lua require('telescope').load_extension 'media_files'
 
 colorscheme codedark
 
@@ -137,12 +135,14 @@ lua require "lspconfig".tsserver.setup { on_attach = require "lsp-format".on_att
 
 " transparent
 let g:transparent_enabled = v:true
+nnoremap tt :TransparentToggle<CR>
 
 " colors
 lua require'colorizer'.setup()
 
 "switched 
 lua require('reach').setup({ notifications = true })
+nnoremap <leader>h :ReachOpen buffers<CR>
 
 "search current word
 nnoremap <leader>s <cmd>lua require('spectre').open_visual({select_word=true})<CR>
