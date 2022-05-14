@@ -32,19 +32,11 @@ let g:clipboard = {
 
 call plug#begin()
 Plug 'tomasiser/vim-code-dark'
-" Plug 'pangloss/vim-javascript'
-" Plug 'szw/vim-maximizer'
 Plug 'christoomey/vim-tmux-navigator'
-" Plug 'kassio/neoterm'
-" Plug 'tpope/vim-commentary'
 Plug 'lukas-reineke/lsp-format.nvim'
-" Plug 'itchyny/vim-gitbranch'
 Plug 'preservim/NERDTree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-""Plug 'feline-nvim/feline.nvim'
-"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-"Plug 'junegunn/fzf.vim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-file-browser.nvim'
@@ -57,8 +49,6 @@ Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-loc
 Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
 Plug 'xiyaowong/nvim-transparent'
 Plug 'norcalli/nvim-colorizer.lua'
-" Plug 'jghauser/mkdir.nvim'
-" Plug 'stevearc/dressing.nvim'
 Plug 'toppair/reach.nvim'
 Plug 'akinsho/toggleterm.nvim'
 Plug 'windwp/nvim-spectre'
@@ -73,6 +63,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'nvim-lua/popup.nvim'
 Plug 'famiu/nvim-reload'
+Plug 'glepnir/dashboard-nvim'
 call plug#end()
 
 let mapleader = " "
@@ -173,3 +164,6 @@ let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
 let g:NERDTreeimitedSyntax = 1
+
+" dashboard
+let g:dashboard_default_executive ='telescope'
