@@ -64,6 +64,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'nvim-lua/popup.nvim'
 Plug 'famiu/nvim-reload'
 Plug 'glepnir/dashboard-nvim'
+Plug 'preservim/tagbar'
 call plug#end()
 
 let mapleader = " "
@@ -106,8 +107,6 @@ inoremap <C-s> <ESC>:w<CR>
 nnoremap <C-q> :ToggleTerm<CR>
 nnoremap <leader>q :ToggleTerm direction="float"<CR>
 nnoremap <leader><C-Q> :ToggleTermToggleAll<CR>
-
-nnoremap <leader>F :Neoformat prettier<CR>
 
 " fugitive
 nnoremap <leader>gg :G<CR>
@@ -167,3 +166,6 @@ let g:NERDTreeimitedSyntax = 1
 
 " dashboard
 let g:dashboard_default_executive ='telescope'
+
+"Tagbar
+nmap <F8> :TagbarToggle<CR>
