@@ -1,7 +1,20 @@
 :set encoding=UTF-8
-:set clipboard+=unnamedplus
+:set clipboard=unnamedplus
+let g:clipboard = {
+      \   'name': 'win32yank-wsl',
+      \   'copy': {
+      \      '+': 'win32yank.exe -i --crlf',
+      \      '*': 'win32yank.exe -i --crlf',
+      \    },
+      \   'paste': {
+      \      '+': 'win32yank.exe -o --lf',
+      \      '*': 'win32yank.exe -o --lf',
+      \   },
+      \   'cache_enabled': 0,
+      \ }
 :set completeopt=menuone,noinsert,noselect
 :set number
+:set relativenumber
 :set autoindent
 :set tabstop=4
 :set shiftwidth=4
@@ -15,22 +28,15 @@
 :set incsearch
 :set hidden
 :set termbidi
+:set signcolumn=yes:1
 
 call plug#begin()
 Plug 'tomasiser/vim-code-dark'
-Plug 'pangloss/vim-javascript'
-Plug 'szw/vim-maximizer'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'kassio/neoterm'
-Plug 'tpope/vim-commentary'
 Plug 'lukas-reineke/lsp-format.nvim'
-Plug 'itchyny/vim-gitbranch'
 Plug 'preservim/NERDTree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-""Plug 'feline-nvim/feline.nvim'
-"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-"Plug 'junegunn/fzf.vim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-file-browser.nvim'
@@ -43,8 +49,6 @@ Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-loc
 Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
 Plug 'xiyaowong/nvim-transparent'
 Plug 'norcalli/nvim-colorizer.lua'
-Plug 'jghauser/mkdir.nvim'
-Plug 'stevearc/dressing.nvim'
 Plug 'toppair/reach.nvim'
 Plug 'akinsho/toggleterm.nvim'
 Plug 'windwp/nvim-spectre'
@@ -57,7 +61,10 @@ Plug 'leafOfTree/vim-svelte-plugin'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'liuchengxu/vim-which-key'
+Plug 'nvim-lua/popup.nvim'
+Plug 'famiu/nvim-reload'
+Plug 'glepnir/dashboard-nvim'
+Plug 'preservim/tagbar'
 call plug#end()
 
 let mapleader = " "
@@ -74,6 +81,7 @@ endif
 
 nnoremap <C-a> :NERDTreeFind<cr>
 nnoremap <C-B> :NERDTreeToggle<CR>
+nnoremap <F5> :NERDTreeRefreshRoot<cr>
 nnoremap <C-i> :PlugInstall<CR>
 nnoremap <Tab> :bnext<CR>
 nnoremap <C-w> :enew<bar>bd #<CR>
@@ -101,8 +109,6 @@ nnoremap <leader>q :ToggleTerm direction="float"<CR>
 nnoremap <leader><C-Q> :ToggleTermToggleAll<CR>
 map <C-v> <Nop>
 
-nnoremap <leader>F :Neoformat prettier<CR>
-
 " fugitive
 nnoremap <leader>gg :G<CR>
 
@@ -120,12 +126,14 @@ lua require "lspconfig".tsserver.setup { on_attach = require "lsp-format".on_att
 
 " transparent
 let g:transparent_enabled = v:true
+nnoremap tt :TransparentToggle<CR>
 
 " colors
 lua require'colorizer'.setup()
 
 "switched 
 lua require('reach').setup({ notifications = true })
+nnoremap <leader>h :ReachOpen buffers<CR>
 
 "search current word
 nnoremap <leader>s <cmd>lua require('spectre').open_visual({select_word=true})<CR>
@@ -156,3 +164,9 @@ let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
 let g:NERDTreeimitedSyntax = 1
+
+" dashboard
+let g:dashboard_default_executive ='telescope'
+
+"Tagbar
+nmap <F8> :TagbarToggle<CR>
