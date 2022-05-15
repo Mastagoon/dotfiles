@@ -57,6 +57,7 @@ Plug 'leafOfTree/vim-svelte-plugin'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'liuchengxu/vim-which-key'
 call plug#end()
 
 let mapleader = " "
@@ -98,6 +99,7 @@ inoremap <C-s> <ESC>:w<CR>
 nnoremap <C-q> :ToggleTerm<CR>
 nnoremap <leader>q :ToggleTerm direction="float"<CR>
 nnoremap <leader><C-Q> :ToggleTermToggleAll<CR>
+map <C-v> <Nop>
 
 nnoremap <leader>F :Neoformat prettier<CR>
 
