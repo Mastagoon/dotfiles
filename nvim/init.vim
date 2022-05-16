@@ -40,7 +40,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-file-browser.nvim'
-Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'neovim/nvim-lspconfig'
 Plug 'kabouzeid/nvim-lspinstall'
@@ -51,7 +50,7 @@ Plug 'xiyaowong/nvim-transparent'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'toppair/reach.nvim'
 Plug 'akinsho/toggleterm.nvim'
-Plug 'windwp/nvim-spectre'
+" Plug 'windwp/nvim-spectre'
 Plug 'preservim/nerdcommenter'
 Plug 'github/copilot.vim'
 Plug 'honza/vim-snippets'
@@ -61,9 +60,7 @@ Plug 'leafOfTree/vim-svelte-plugin'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'nvim-lua/popup.nvim'
 Plug 'famiu/nvim-reload'
-Plug 'glepnir/dashboard-nvim'
 Plug 'preservim/tagbar'
 call plug#end()
 
@@ -71,13 +68,6 @@ let mapleader = " "
 if(has("termguicolors"))
 	set termguicolors
 endif
-
-" inoremap { {}<Esc>ha
-" inoremap ( ()<Esc>ha
-" inoremap [ []<Esc>ha
-" inoremap " ""<Esc>ha
-" inoremap ' ''<Esc>ha
-" inoremap ` ``<Esc>ha
 
 nnoremap <C-a> :NERDTreeFind<cr>
 nnoremap <C-B> :NERDTreeToggle<CR>
@@ -88,19 +78,15 @@ nnoremap <C-w> :enew<bar>bd #<CR>
 
 " fzf
 nnoremap <C-e> :Telescope find_files<CR>
-nnoremap <leader><C-e> :Telescope file_browser<CR>
 nnoremap <C-f> :Telescope live_grep<CR>
 lua require("telescope").load_extension "file_browser"
 
 colorscheme codedark
 
-" vim-maximizer
-nnoremap <leader>m :MaximizerToggle!<CR>
-
 lua require("tterm")
-let g:neoterm_default_mod = 'botright'
-let g:neoterm_size = 10
-let g:neoterm_autoinsert = 1
+" let g:neoterm_default_mod = 'botright'
+" let g:neoterm_size = 10
+" let g:neoterm_autoinsert = 1
 map ` <Nop>
 nnoremap <C-s> :w<CR>
 inoremap <C-s> <ESC>:w<CR>
@@ -133,13 +119,13 @@ lua require'colorizer'.setup()
 
 "switched 
 lua require('reach').setup({ notifications = true })
-nnoremap <leader>h :ReachOpen buffers<CR>
+nnoremap <leader>hh :ReachOpen buffers<CR>
 
 "search current word
-nnoremap <leader>s <cmd>lua require('spectre').open_visual({select_word=true})<CR>
-vnoremap <leader>s <cmd>lua require('spectre').open_visual()<CR>
-"  search in current file
-nnoremap <leader>sp viw:lua require('spectre').open_file_search()<cr>
+" nnoremap <leader>s <cmd>lua require('spectre').open_visual({select_word=true})<CR>
+" vnoremap <leader>s <cmd>lua require('spectre').open_visual()<CR>
+ " search in current file
+" nnoremap <leader>sp viw:lua require('spectre').open_file_search()<cr>
 " run command :Spectr
 "
 " airline
@@ -164,9 +150,6 @@ let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
 let g:NERDTreeimitedSyntax = 1
-
-" dashboard
-let g:dashboard_default_executive ='telescope'
 
 "Tagbar
 nmap <F8> :TagbarToggle<CR>
