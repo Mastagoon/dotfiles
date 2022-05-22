@@ -1,2 +1,5 @@
 plugged/
 shada/
+yarn.lock
+node_modules/
+telescope_history
