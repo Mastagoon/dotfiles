@@ -1,17 +1,17 @@
 :set encoding=UTF-8
 :set clipboard=unnamedplus
-let g:clipboard = {
-      \   'name': 'win32yank-wsl',
-      \   'copy': {
-      \      '+': 'win32yank.exe -i --crlf',
-      \      '*': 'win32yank.exe -i --crlf',
-      \    },
-      \   'paste': {
-      \      '+': 'win32yank.exe -o --lf',
-      \      '*': 'win32yank.exe -o --lf',
-      \   },
-      \   'cache_enabled': 0,
-      \ }
+" let g:clipboard = {
+      " \   'name': 'win32yank-wsl',
+      " \   'copy': {
+      " \      '+': 'win32yank.exe -i --crlf',
+      " \      '*': 'win32yank.exe -i --crlf',
+      " \    },
+      " \   'paste': {
+      " \      '+': 'win32yank.exe -o --lf',
+      " \      '*': 'win32yank.exe -o --lf',
+      " \   },
+      " \   'cache_enabled': 0,
+      " \ }
 :set completeopt=menuone,noinsert,noselect
 :set number
 :set relativenumber
@@ -83,7 +83,8 @@ lua require("telescope").load_extension "file_browser"
 
 colorscheme codedark
 
-"lua require("tterm")
+lua require("toggleterm").setup()
+lua require("tterm")
 " let g:neoterm_default_mod = 'botright'
 " let g:neoterm_size = 10
 " let g:neoterm_autoinsert = 1
