@@ -83,7 +83,7 @@ lua require("telescope").load_extension "file_browser"
 
 colorscheme codedark
 
-lua require("tterm")
+"lua require("tterm")
 " let g:neoterm_default_mod = 'botright'
 " let g:neoterm_size = 10
 " let g:neoterm_autoinsert = 1
