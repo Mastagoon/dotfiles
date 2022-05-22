@@ -1,4 +1,5 @@
 :set encoding=UTF-8
+:set arabicshape
 :set clipboard=unnamedplus
 " let g:clipboard = {
       " \   'name': 'win32yank-wsl',
@@ -100,7 +101,7 @@ map <C-v> <Nop>
 nnoremap <leader>gg :G<CR>
 
 "lspconfig
-lua require'lspconfig'.tsserver.setup{ onattach=require'completion'.on_attach }
+ lua require'lspconfig'.tsserver.setup{ onattach=require'completion'.on_attach }
 
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gh <cmd>lua vim.lsp.buf.hover()<CR>
