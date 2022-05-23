@@ -63,6 +63,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'famiu/nvim-reload'
 Plug 'preservim/tagbar'
+Plug 'metakirby5/codi.vim'
 call plug#end()
 
 let mapleader = " "
