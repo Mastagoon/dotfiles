@@ -101,7 +101,7 @@ map <C-v> <Nop>
 nnoremap <leader>gg :G<CR>
 
 "lspconfig
- lua require'lspconfig'.tsserver.setup{ onattach=require'completion'.on_attach }
+ " lua require'lspconfig'.tsserver.setup{ onattach=require'completion'.on_attach }
 
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gh <cmd>lua vim.lsp.buf.hover()<CR>
@@ -109,8 +109,8 @@ nnoremap <silent> <F2> <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> gH <cmd>lua vim.lsp.buf.code_action()<CR>
 
 "format
-lua require("lsp-format").setup {}
-lua require "lspconfig".tsserver.setup { on_attach = require "lsp-format".on_attach }
+" lua require("lsp-format").setup {}
+" lua require "lspconfig".tsserver.setup { on_attach = require "lsp-format".on_attach }
 
 " transparent
 let g:transparent_enabled = v:true

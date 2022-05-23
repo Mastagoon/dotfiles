@@ -1,3 +1,11 @@
 {
-  "svelte.enable-ts-plugin": true
+  "svelte.enable-ts-plugin": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "markdown",
+    "json",
+    "javascript",
+    "ts"
+  ],
+  "prettier.semi": false
 }
