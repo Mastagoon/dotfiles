@@ -5,7 +5,7 @@
     "markdown",
     "json",
     "javascript",
-    "ts"
+    "typescript"
   ],
   "prettier.semi": false
 }
