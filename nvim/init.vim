@@ -65,6 +65,7 @@ Plug 'famiu/nvim-reload'
 Plug 'preservim/tagbar'
 Plug 'metakirby5/codi.vim'
 Plug 'vimwiki/vimwiki'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 let mapleader = " "
