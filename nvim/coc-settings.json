@@ -5,7 +5,8 @@
     "markdown",
     "json",
     "javascript",
-    "typescript"
+    "typescript",
+    "cpp"
   ],
   "prettier.semi": false,
   "languageserver": {
