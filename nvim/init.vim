@@ -67,6 +67,8 @@ Plug 'metakirby5/codi.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'tpope/vim-fugitive'
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
+" Plug 'SirVer/ultisnips'
+" Plug 'mlaursen/vim-react-snippets'
 call plug#end()
 
 let mapleader = " "
