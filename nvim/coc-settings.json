@@ -6,7 +6,8 @@
     "json",
     "javascript",
     "typescript",
-    "cpp"
+    "cpp",
+    "typescriptreact"
   ],
   "prettier.semi": false,
   "languageserver": {
