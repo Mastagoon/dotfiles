@@ -67,8 +67,10 @@ Plug 'metakirby5/codi.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'tpope/vim-fugitive'
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
-" Plug 'SirVer/ultisnips'
-" Plug 'mlaursen/vim-react-snippets'
+Plug 'lewis6991/gitsigns.nvim'
+Plug 'kosayoda/nvim-lightbulb'
+Plug 'antoinemadec/FixCursorHold.nvim'
+Plug 'nvim-treesitter/nvim-treesitter'
 call plug#end()
 
 let mapleader = " "
@@ -92,6 +94,7 @@ colorscheme codedark
 
 lua require("toggleterm").setup()
 lua require("tterm")
+lua require("main")
 " let g:neoterm_default_mod = 'botright'
 " let g:neoterm_size = 10
 " let g:neoterm_autoinsert = 1
@@ -170,3 +173,4 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 
 "python
 let g:python3_host_prog = '/usr/bin/python3'
+

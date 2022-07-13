@@ -1,5 +1,12 @@
 {
   "svelte.enable-ts-plugin": true,
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-11",
+      "path": "/usr/lib/jvm/java-11-openjdk-amd64/bin",
+      "default": true
+    }
+  ],
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
     "markdown",
