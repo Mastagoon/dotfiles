@@ -44,9 +44,16 @@ Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'airblade/vim-gitgutter'
 Plug 'neovim/nvim-lspconfig'
 Plug 'kabouzeid/nvim-lspinstall'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
 Plug 'nvim-lua/completion-nvim'
-Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' }
-Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
+" Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' }
+" Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
 Plug 'xiyaowong/nvim-transparent'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'toppair/reach.nvim'
@@ -70,7 +77,12 @@ Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'kosayoda/nvim-lightbulb'
 Plug 'antoinemadec/FixCursorHold.nvim'
+Plug 'jose-elias-alvarez/null-ls.nvim'
+Plug 'MunifTanjim/eslint.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'lewis6991/hover.nvim'
+Plug 'whatsthatsmell/codesmell_dark.vim'
+Plug 'onsails/lspkind.nvim'
 call plug#end()
 
 let mapleader = " "
@@ -91,10 +103,11 @@ nnoremap <C-f> :Telescope live_grep<CR>
 lua require("telescope").load_extension "file_browser"
 
 colorscheme codedark
+" set fillchars+=vert:│
+" vim.cmd "colorscheme
 
 lua require("toggleterm").setup()
 lua require("tterm")
-lua require("main")
 " let g:neoterm_default_mod = 'botright'
 " let g:neoterm_size = 10
 " let g:neoterm_autoinsert = 1
@@ -110,7 +123,7 @@ map <C-v> <Nop>
 nnoremap <leader>gg :G<CR>
 
 "lspconfig
- " lua require'lspconfig'.tsserver.setup{ onattach=require'completion'.on_attach }
+lua require'lspconfig'.tsserver.setup{ onattach=require'completion'.on_attach }
 
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gh <cmd>lua vim.lsp.buf.hover()<CR>
@@ -149,7 +162,7 @@ nnoremap <C-.> :CocCommand actions.open<CR>
 inoremap <C-.> :CocCommand actions.open<CR>
 
 "other files
-source $HOME/.config/nvim/config/coc.vim
+" source $HOME/.config/nvim/config/coc.vim
 source $HOME/.config/nvim/config/commenter.vim
 
 "emmet
@@ -174,3 +187,4 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 "python
 let g:python3_host_prog = '/usr/bin/python3'
 
+lua require("main")
