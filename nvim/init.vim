@@ -34,7 +34,7 @@
 call plug#begin()
 Plug 'tomasiser/vim-code-dark'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'lukas-reineke/lsp-format.nvim'
+" Plug 'lukas-reineke/lsp-format.nvim'
 Plug 'preservim/NERDTree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -43,17 +43,17 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'airblade/vim-gitgutter'
 Plug 'neovim/nvim-lspconfig'
-Plug 'kabouzeid/nvim-lspinstall'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-vsnip'
-Plug 'hrsh7th/vim-vsnip'
+" Plug 'williamboman/nvim-lsp-installer'
+" Plug 'hrsh7th/cmp-nvim-lsp'
+" Plug 'hrsh7th/cmp-buffer'
+" Plug 'hrsh7th/cmp-path'
+" Plug 'hrsh7th/cmp-cmdline'
+" Plug 'hrsh7th/nvim-cmp'
+" Plug 'hrsh7th/cmp-vsnip'
+" Plug 'hrsh7th/vim-vsnip'
 Plug 'nvim-lua/completion-nvim'
-" Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' }
-" Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
+Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' }
+Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
 Plug 'xiyaowong/nvim-transparent'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'toppair/reach.nvim'
@@ -83,6 +83,9 @@ Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'lewis6991/hover.nvim'
 Plug 'whatsthatsmell/codesmell_dark.vim'
 Plug 'onsails/lspkind.nvim'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install --frozen-lockfile --production',
+  \ 'for': ['javascript', 'typescript', 'typescriptreact', 'javascriptreact','dart','css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
 call plug#end()
 
 let mapleader = " "
@@ -123,7 +126,8 @@ map <C-v> <Nop>
 nnoremap <leader>gg :G<CR>
 
 "lspconfig
-lua require'lspconfig'.tsserver.setup{ onattach=require'completion'.on_attach }
+" lua require'lspconfig'.tsserver.setup{ onattach=require'completion'.on_attach }
+" lua require'lspconfig'.dartls.setup{}
 
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gh <cmd>lua vim.lsp.buf.hover()<CR>
@@ -162,7 +166,7 @@ nnoremap <C-.> :CocCommand actions.open<CR>
 inoremap <C-.> :CocCommand actions.open<CR>
 
 "other files
-" source $HOME/.config/nvim/config/coc.vim
+source $HOME/.config/nvim/config/coc.vim
 source $HOME/.config/nvim/config/commenter.vim
 
 "emmet
