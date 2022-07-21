@@ -1,18 +1,6 @@
 :set encoding=UTF-8
 :set arabicshape
 :set clipboard=unnamedplus
-" let g:clipboard = {
-      " \   'name': 'win32yank-wsl',
-      " \   'copy': {
-      " \      '+': 'win32yank.exe -i --crlf',
-      " \      '*': 'win32yank.exe -i --crlf',
-      " \    },
-      " \   'paste': {
-      " \      '+': 'win32yank.exe -o --lf',
-      " \      '*': 'win32yank.exe -o --lf',
-      " \   },
-      " \   'cache_enabled': 0,
-      " \ }
 :set completeopt=menuone,noinsert,noselect
 :set number
 :set relativenumber
@@ -36,22 +24,14 @@ Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'tomasiser/vim-code-dark'
 Plug 'christoomey/vim-tmux-navigator'
-" Plug 'lukas-reineke/lsp-format.nvim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-file-browser.nvim'
+Plug 'nvim-telescope/telescope-ui-select.nvim'
 Plug 'airblade/vim-gitgutter'
 Plug 'neovim/nvim-lspconfig'
-" Plug 'williamboman/nvim-lsp-installer'
-" Plug 'hrsh7th/cmp-nvim-lsp'
-" Plug 'hrsh7th/cmp-buffer'
-" Plug 'hrsh7th/cmp-path'
-" Plug 'hrsh7th/cmp-cmdline'
-" Plug 'hrsh7th/nvim-cmp'
-" Plug 'hrsh7th/cmp-vsnip'
-" Plug 'hrsh7th/vim-vsnip'
 Plug 'nvim-lua/completion-nvim'
 Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' }
 Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
@@ -59,7 +39,6 @@ Plug 'xiyaowong/nvim-transparent'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'toppair/reach.nvim'
 Plug 'akinsho/toggleterm.nvim'
-" Plug 'windwp/nvim-spectre'
 Plug 'preservim/nerdcommenter'
 Plug 'github/copilot.vim'
 Plug 'honza/vim-snippets'
@@ -86,6 +65,7 @@ Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install --frozen-lockfile --production',
   \ 'for': ['javascript', 'typescript', 'typescriptreact', 'javascriptreact','dart','css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
 Plug 'psliwka/vim-smoothie'
+Plug 'cljoly/telescope-repo.nvim'
 call plug#end()
 
 let mapleader = " "

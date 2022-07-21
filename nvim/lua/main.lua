@@ -1,4 +1,5 @@
 require("custom/nvimtree")
+require("custom/telescope")
 
 require('gitsigns').setup {
   signs = {
