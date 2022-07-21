@@ -32,10 +32,11 @@
 :set signcolumn=yes:1
 
 call plug#begin()
+Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
+Plug 'kyazdani42/nvim-tree.lua'
 Plug 'tomasiser/vim-code-dark'
 Plug 'christoomey/vim-tmux-navigator'
 " Plug 'lukas-reineke/lsp-format.nvim'
-Plug 'preservim/NERDTree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'nvim-lua/plenary.nvim'
@@ -66,8 +67,6 @@ Plug 'mattn/emmet-vim'
 Plug 'Raimondi/delimitMate'
 Plug 'leafOfTree/vim-svelte-plugin'
 Plug 'ryanoasis/vim-devicons'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'famiu/nvim-reload'
 Plug 'preservim/tagbar'
 Plug 'metakirby5/codi.vim'
@@ -86,6 +85,7 @@ Plug 'onsails/lspkind.nvim'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install --frozen-lockfile --production',
   \ 'for': ['javascript', 'typescript', 'typescriptreact', 'javascriptreact','dart','css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+Plug 'psliwka/vim-smoothie'
 call plug#end()
 
 let mapleader = " "
@@ -93,9 +93,9 @@ if(has("termguicolors"))
 	set termguicolors
 endif
 
-nnoremap <C-a> :NERDTreeFind<cr>
-nnoremap <C-B> :NERDTreeToggle<CR>
-nnoremap <F5> :NERDTreeRefreshRoot<cr>
+nnoremap <C-a> :NvimTreeFocus<cr>
+nnoremap <C-B> :NvimTreeToggle<CR>
+nnoremap <F5> :NvimTreeRefresh<cr>
 nnoremap <C-i> :PlugInstall<CR>
 nnoremap <Tab> :bnext<CR>
 nnoremap <C-w> :enew<bar>bd #<CR>
@@ -174,10 +174,10 @@ let g:user_emmet_leader_key='<C-]>'
 
 
 "icons
-let g:NERDTreeFileExtensionHighlightFullName = 1
-let g:NERDTreeExactMatchHighlightFullName = 1
-let g:NERDTreePatternMatchHighlightFullName = 1
-let g:NERDTreeimitedSyntax = 1
+" let g:NERDTreeFileExtensionHighlightFullName = 1
+" let g:NERDTreeExactMatchHighlightFullName = 1
+" let g:NERDTreePatternMatchHighlightFullName = 1
+" let g:NERDTreeimitedSyntax = 1
 
 "Tagbar
 nmap <F8> :TagbarToggle<CR>
