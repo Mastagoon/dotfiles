@@ -18,9 +18,10 @@
 :set hidden
 :set termbidi
 :set signcolumn=yes:1
+:set termguicolors
 
 call plug#begin()
-Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'tomasiser/vim-code-dark'
 Plug 'christoomey/vim-tmux-navigator'
@@ -31,7 +32,6 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'nvim-telescope/telescope-ui-select.nvim'
 Plug 'airblade/vim-gitgutter'
-Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
 Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' }
 Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
@@ -44,7 +44,6 @@ Plug 'github/copilot.vim'
 Plug 'honza/vim-snippets'
 Plug 'mattn/emmet-vim'
 Plug 'Raimondi/delimitMate'
-Plug 'leafOfTree/vim-svelte-plugin'
 Plug 'ryanoasis/vim-devicons'
 Plug 'famiu/nvim-reload'
 Plug 'preservim/tagbar'
@@ -53,44 +52,38 @@ Plug 'vimwiki/vimwiki'
 Plug 'tpope/vim-fugitive'
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 Plug 'lewis6991/gitsigns.nvim'
-Plug 'kosayoda/nvim-lightbulb'
 Plug 'antoinemadec/FixCursorHold.nvim'
-Plug 'jose-elias-alvarez/null-ls.nvim'
-Plug 'MunifTanjim/eslint.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'lewis6991/hover.nvim'
-Plug 'whatsthatsmell/codesmell_dark.vim'
-Plug 'onsails/lspkind.nvim'
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install --frozen-lockfile --production',
-  \ 'for': ['javascript', 'typescript', 'typescriptreact', 'javascriptreact','dart','css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
 Plug 'psliwka/vim-smoothie'
 Plug 'cljoly/telescope-repo.nvim'
+Plug 'famiu/bufdelete.nvim'
+Plug 'rcarriga/nvim-notify'
+Plug 'ghillb/cybu.nvim'
+Plug 'johann2357/nvim-smartbufs'
 call plug#end()
 
-let mapleader = " "
-if(has("termguicolors"))
-	set termguicolors
-endif
+lua require("main")
 
-nnoremap <C-a> :NvimTreeFocus<cr>
+let mapleader = " "
+" if(has("termguicolors"))
+	" set termguicolors
+" endif
+
+nnoremap <C-a> :NvimTreeFindFile<cr>
 nnoremap <C-B> :NvimTreeToggle<CR>
 nnoremap <F5> :NvimTreeRefresh<cr>
 nnoremap <C-i> :PlugInstall<CR>
-nnoremap <Tab> :bnext<CR>
+nnoremap <Tab> :CybuNext<CR>
 nnoremap <C-w> :enew<bar>bd #<CR>
 
 " fzf
 nnoremap <C-e> :Telescope find_files<CR>
 nnoremap <C-f> :Telescope live_grep<CR>
-lua require("telescope").load_extension "file_browser"
 
 colorscheme codedark
 " set fillchars+=vert:│
 " vim.cmd "colorscheme
 
-lua require("toggleterm").setup()
-lua require("tterm")
 " let g:neoterm_default_mod = 'botright'
 " let g:neoterm_size = 10
 " let g:neoterm_autoinsert = 1
@@ -123,18 +116,9 @@ let g:transparent_enabled = v:true
 nnoremap tt :TransparentToggle<CR>
 
 " colors
-lua require'colorizer'.setup()
 
 "switched 
-lua require('reach').setup({ notifications = true })
 nnoremap <leader>hh :ReachOpen buffers<CR>
-
-"search current word
-" nnoremap <leader>s <cmd>lua require('spectre').open_visual({select_word=true})<CR>
-" vnoremap <leader>s <cmd>lua require('spectre').open_visual()<CR>
- " search in current file
-" nnoremap <leader>sp viw:lua require('spectre').open_file_search()<cr>
-" run command :Spectr
 "
 " airline
 let g:airline_powerline_fonts = 1
@@ -152,13 +136,6 @@ source $HOME/.config/nvim/config/commenter.vim
 "emmet
 let g:user_emmet_leader_key='<C-]>'
 
-
-"icons
-" let g:NERDTreeFileExtensionHighlightFullName = 1
-" let g:NERDTreeExactMatchHighlightFullName = 1
-" let g:NERDTreePatternMatchHighlightFullName = 1
-" let g:NERDTreeimitedSyntax = 1
-
 "Tagbar
 nmap <F8> :TagbarToggle<CR>
 nnoremap <A-j> :m .+1<CR>==
@@ -171,4 +148,22 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 "python
 let g:python3_host_prog = '/usr/bin/python3'
 
-lua require("main")
+
+" lua vim.notify = require("notify")
+"
+" Jump to the N buffer (by index) according to :ls buffer list
+" where N is NOT the buffer number but the INDEX in such list
+" NOTE: it does not include terminal buffers
+nnoremap <Leader>1 :lua require("nvim-smartbufs").goto_buffer(1)<CR>
+nnoremap <Leader>2 :lua require("nvim-smartbufs").goto_buffer(2)<CR>
+nnoremap <Leader>3 :lua require("nvim-smartbufs").goto_buffer(3)<CR>
+nnoremap <Leader>4 :lua require("nvim-smartbufs").goto_buffer(4)<CR>
+nnoremap <Leader>5 :lua require("nvim-smartbufs").goto_buffer(5)<CR>
+nnoremap <Leader>6 :lua require("nvim-smartbufs").goto_buffer(6)<CR>
+nnoremap <Leader>7 :lua require("nvim-smartbufs").goto_buffer(7)<CR>
+nnoremap <Leader>8 :lua require("nvim-smartbufs").goto_buffer(8)<CR>
+nnoremap <Leader>9 :lua require("nvim-smartbufs").goto_buffer(9)<CR>
+
+" Improved :bnext :bprev behavior (without considering terminal buffers)
+nnoremap <Right> :lua require("nvim-smartbufs").goto_next_buffer()<CR>
+nnoremap <Left> :lua require("nvim-smartbufs").goto_prev_buffer()<CR>

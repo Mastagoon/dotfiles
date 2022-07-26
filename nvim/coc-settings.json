@@ -7,6 +7,7 @@
       "default": true
     }
   ],
+  "coc.preferences.hoverTarget": "float",
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
     "markdown",
