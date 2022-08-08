@@ -60,6 +60,7 @@ Plug 'famiu/bufdelete.nvim'
 Plug 'rcarriga/nvim-notify'
 Plug 'ghillb/cybu.nvim'
 Plug 'johann2357/nvim-smartbufs'
+Plug 'pantharshit00/vim-prisma'
 call plug#end()
 
 lua require("main")
