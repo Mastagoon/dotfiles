@@ -41,7 +41,7 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'toppair/reach.nvim'
 Plug 'akinsho/toggleterm.nvim'
 Plug 'preservim/nerdcommenter'
-Plug 'honza/vim-snippets'
+Plug 'mlaursen/vim-react-snippets'
 Plug 'mattn/emmet-vim'
 Plug 'Raimondi/delimitMate'
 Plug 'ryanoasis/vim-devicons'
@@ -60,9 +60,12 @@ Plug 'famiu/bufdelete.nvim'
 Plug 'ghillb/cybu.nvim'
 Plug 'johann2357/nvim-smartbufs'
 Plug 'pantharshit00/vim-prisma'
+Plug 'tyrannicaltoucan/vim-deep-space'
 call plug#end()
 
 lua require("main")
+
+colorscheme codedark
 
 let mapleader = " "
 " if(has("termguicolors"))
@@ -80,7 +83,6 @@ nnoremap <C-w> :enew<bar>bd #<CR>
 nnoremap <C-e> :Telescope find_files<CR>
 nnoremap <C-f> :Telescope live_grep<CR>
 
-colorscheme codedark
 " set fillchars+=vert:│
 " vim.cmd "colorscheme
 
