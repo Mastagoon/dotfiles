@@ -67,7 +67,7 @@ require'nvim-treesitter.configs'.setup {
 --
 	-- }
   -- A list of parser names, or "all"
-  ensure_installed = { "c", "cpp", "typescript","lua", "rust" },
+  ensure_installed = { "c", "cpp", "typescript","lua", "rust" ,"astro"},
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -95,3 +95,9 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = true,
   },
 }
+
+vim.filetype.add({
+  extension = {
+    astro = "astro",
+  },
+})

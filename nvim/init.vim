@@ -19,6 +19,7 @@
 :set termbidi
 :set signcolumn=yes:1
 :set termguicolors
+let g:do_filetype_lua = 1
 
 call plug#begin()
 Plug 'kyazdani42/nvim-web-devicons'
@@ -61,6 +62,7 @@ Plug 'ghillb/cybu.nvim'
 Plug 'johann2357/nvim-smartbufs'
 Plug 'pantharshit00/vim-prisma'
 Plug 'tyrannicaltoucan/vim-deep-space'
+Plug 'neovim/nvim-lspconfig'
 call plug#end()
 
 lua require("main")
@@ -112,6 +114,7 @@ nnoremap <silent> gH <cmd>lua vim.lsp.buf.code_action()<CR>
 "format
 " lua require("lsp-format").setup {}
 " lua require "lspconfig".tsserver.setup { on_attach = require "lsp-format".on_attach }
+lua require'lspconfig'.astro.setup{}
 
 " transparent
 let g:transparent_enabled = v:true
@@ -169,3 +172,11 @@ nnoremap <Leader>9 :lua require("nvim-smartbufs").goto_buffer(9)<CR>
 " Improved :bnext :bprev behavior (without considering terminal buffers)
 nnoremap <Right> :lua require("nvim-smartbufs").goto_next_buffer()<CR>
 nnoremap <Left> :lua require("nvim-smartbufs").goto_prev_buffer()<CR>
+
+
+if exists("did_load_filetypes")
+	finish
+endif
+augroup filetypedetect
+	au! BufRead,BufNewFile *.astro		setfiletype astro
+augroup END
