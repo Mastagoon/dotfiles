@@ -63,6 +63,7 @@ Plug 'johann2357/nvim-smartbufs'
 Plug 'pantharshit00/vim-prisma'
 Plug 'tyrannicaltoucan/vim-deep-space'
 Plug 'neovim/nvim-lspconfig'
+Plug 'wakatime/vim-wakatime'
 call plug#end()
 
 lua require("main")
