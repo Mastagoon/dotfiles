@@ -116,6 +116,7 @@ alias v="nvim"
 alias t="tmux"
 alias s="xdg-open ."
 alias g="git"
+alias e="exit"
 
 source  ~/powerlevel9k/powerlevel9k.zsh-theme
 # includes sensitve information / env-vars etc..
