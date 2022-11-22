@@ -208,7 +208,7 @@ bindsym XF86Calculator exec gnome-calculator
 
 
 # Screenshots
-bindsym Print exec --no-startup-id maim | xclip -selection clipboard -t image/png && notify-send -u "low" -t 500 "Copied!" "Screenshot saved sucessfully!"
+bindsym Print exec --no-startup-id ~/.config/i3/i3-scripts/take-full-screenshot.sh
 
 bindsym $super+Shift+s exec --no-startup-id ~/.config/i3/i3-scripts/take-screenshot.sh
 
