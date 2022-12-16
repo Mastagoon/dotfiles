@@ -7,6 +7,8 @@ require('reach').setup({ notifications = true })
 require("custom/tterm")
 require("custom/nvimtree")
 require("custom/telescope")
+require("custom/lsp")
+require("custom/cmp")
 
 require('gitsigns').setup {
   signs = {
@@ -57,9 +59,9 @@ require'nvim-treesitter.configs'.setup {
 	},
 	indent = { enable= true },
 	matchup = { enable= true },
-	autopairs = { enable= true },
+	autopairs = { enable= false },
 	rainbow = { 
-		enable= true,
+		enable= false,
 		extended_mode= true,
 		max_file_lines = 1000,
 	},

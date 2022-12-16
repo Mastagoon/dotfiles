@@ -1,7 +1,7 @@
 :set encoding=UTF-8
 :set arabicshape
 :set clipboard=unnamedplus
-:set completeopt=menuone,noinsert,noselect
+:set completeopt=menu,menuone,noselect
 :set number
 :set relativenumber
 :set autoindent
@@ -35,8 +35,8 @@ Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'nvim-telescope/telescope-ui-select.nvim'
 Plug 'airblade/vim-gitgutter'
 Plug 'nvim-lua/completion-nvim'
-Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' }
-Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
+" Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' }
+" Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
 Plug 'xiyaowong/nvim-transparent'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'toppair/reach.nvim'
@@ -64,6 +64,20 @@ Plug 'pantharshit00/vim-prisma'
 Plug 'tyrannicaltoucan/vim-deep-space'
 Plug 'neovim/nvim-lspconfig'
 Plug 'wakatime/vim-wakatime'
+" autocompletion 7 snipps
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'lukas-reineke/lsp-format.nvim'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+" vsnip .
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'onsails/lspkind.nvim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'alvan/vim-closetag'
+Plug 'luochen1990/rainbow'
 call plug#end()
 
 lua require("main")
@@ -104,6 +118,7 @@ map <C-v> <Nop>
 nnoremap <leader>gg :G<CR>
 
 "lspconfig
+" source $HOME/.config/nvim/config/lsp.vim
 " lua require'lspconfig'.tsserver.setup{ onattach=require'completion'.on_attach }
 " lua require'lspconfig'.dartls.setup{}
 
@@ -132,11 +147,11 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
 
 " coc
-nnoremap <C-.> :CocCommand actions.open<CR>
-inoremap <C-.> :CocCommand actions.open<CR>
+" nnoremap <C-.> :CocCommand actions.open<CR>
+" inoremap <C-.> :CocCommand actions.open<CR>
 
 "other files
-source $HOME/.config/nvim/config/coc.vim
+" source $HOME/.config/nvim/config/coc.vim
 source $HOME/.config/nvim/config/commenter.vim
 
 "emmet
@@ -181,3 +196,7 @@ endif
 augroup filetypedetect
 	au! BufRead,BufNewFile *.astro		setfiletype astro
 augroup END
+
+" close tags
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.php,*.jsx"
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
