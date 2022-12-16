@@ -217,7 +217,7 @@ bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t ima
 
 for_window [class="Gnome-calculator"] floating enable
 
-# exec discord
+exec discord
 exec todoist
 exec --no-startup-id i3-msg '$ws3; exec gnome-terminal'
 exec --no-startup-id blueman-manager --start-minimized
