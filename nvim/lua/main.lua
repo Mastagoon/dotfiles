@@ -9,6 +9,8 @@ require("custom/nvimtree")
 require("custom/telescope")
 require("custom/lsp")
 require("custom/cmp")
+require("settings")
+require("remap")
 
 require('gitsigns').setup {
   signs = {
