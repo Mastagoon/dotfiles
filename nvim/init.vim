@@ -79,6 +79,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
 Plug 'luochen1990/rainbow'
 Plug 'williamboman/mason.nvim'
+Plug 'ThePrimeagen/harpoon'
 call plug#end()
 
 lua require("main")
