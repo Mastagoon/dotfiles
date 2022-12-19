@@ -11,6 +11,7 @@ require("custom/lsp")
 require("custom/cmp")
 require("settings")
 require("remap")
+require("mason").setup()
 
 require('gitsigns').setup {
   signs = {
