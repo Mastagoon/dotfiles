@@ -81,6 +81,8 @@ Plug 'luochen1990/rainbow'
 Plug 'williamboman/mason.nvim'
 Plug 'ThePrimeagen/harpoon'
 Plug 'jose-elias-alvarez/typescript.nvim'
+Plug 'jose-elias-alvarez/null-ls.nvim'
+Plug 'sbdchd/neoformat'
 call plug#end()
 
 lua require("main")

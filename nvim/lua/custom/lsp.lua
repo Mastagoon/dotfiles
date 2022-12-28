@@ -31,7 +31,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
   -- vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 
-	require("lsp-format").on_attach(client)
+	-- require("lsp-format").on_attach(client)
 end
 
 local lsp_flags = {
@@ -89,3 +89,33 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 require'lspconfig'.html.setup {
   capabilities = capabilities,
 }
+
+local null_ls = require("null-ls")
+
+null_ls.setup({
+    -- sources = {
+        -- null_ls.builtins.formatting.prettier,
+    -- },
+})
+
+-- prettier
+-- local prettier = require("prettier")
+--
+-- prettier.setup({
+  -- bin = 'prettier', -- or `'prettierd'` (v0.22+)
+  -- ["null-ls"] = {
+    -- condition = function()
+      -- return prettier.config_exists({
+				-- if `false`, skips checking `package.json` for `"prettier"` key
+        -- check_package_json = true,
+      -- })
+    -- end,
+    -- runtime_condition = function(params)
+			-- return false to skip running prettier
+      -- return true
+    -- end,
+    -- timeout = 5000,
+  -- }
+-- })
+
+-- vim.g.neoformat_try_node_exe = 1
