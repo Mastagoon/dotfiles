@@ -80,6 +80,7 @@ Plug 'alvan/vim-closetag'
 Plug 'luochen1990/rainbow'
 Plug 'williamboman/mason.nvim'
 Plug 'ThePrimeagen/harpoon'
+Plug 'jose-elias-alvarez/typescript.nvim'
 call plug#end()
 
 lua require("main")

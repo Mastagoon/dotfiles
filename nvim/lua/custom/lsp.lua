@@ -39,14 +39,26 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 -- LANGUAGE SERVERS HERE --
+--
 require('lspconfig')['pyright'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
 }
-require('lspconfig')['tsserver'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
-}
+-- require('lspconfig')['tsserver'].setup{
+    -- on_attach = on_attach,
+    -- flags = lsp_flags,
+-- }
+require("typescript").setup({
+    disable_commands = false, -- prevent the plugin from creating Vim commands
+    debug = false, -- enable debug logging for commands
+    go_to_source_definition = {
+        fallback = true, -- fall back to standard LSP definition on failure
+    },
+    server = { -- pass options to lspconfig's setup method
+        on_attach = on_attach,
+				flags = lsp_flags,
+    },
+})
 require('lspconfig')['rust_analyzer'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
@@ -60,6 +72,15 @@ require'lspconfig'.prismals.setup{
 	flags = lsp_flags,
 }
 require'lspconfig'.html.setup{}
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+require'lspconfig'.jsonls.setup {
+  capabilities = capabilities,
+	on_attach = on_attach,
+	flags = lsp_flags,
+}
+
 --
 --Enable (broadcasting) snippet capability for completion
 local capabilities = vim.lsp.protocol.make_client_capabilities()

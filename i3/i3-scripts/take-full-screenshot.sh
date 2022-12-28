@@ -1,5 +1,5 @@
 #! /bin/bash
-p="/home/$USER/Pictures/screenshots/screenshot $(date).png";
+p="/home/$USER/Pictures/screenshots/screenshot $(date)-$((RANDOM/50 + 1)).png";
 echo "$p";
 maim "$p";
 xclip -selection clipboard -t image/png -i "$p";

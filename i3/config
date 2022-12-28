@@ -71,7 +71,7 @@ bindsym $super+space floating toggle
 bindsym $super+Shift+space focus mode_toggle
 
 set $ws1 "1: Main   "
-set $ws2 "2: Stuff   "
+set $ws2 "2: Slack   "
 set $ws3 "3: Terminal   "
 set $ws4 "4: Tasks   "
 set $ws5 "5: Discord   "
