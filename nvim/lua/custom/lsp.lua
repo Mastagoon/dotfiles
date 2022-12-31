@@ -31,7 +31,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
   -- vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 
-	-- require("lsp-format").on_attach(client)
+	require("lsp-format").on_attach(client)
 end
 
 local lsp_flags = {
@@ -81,6 +81,11 @@ require'lspconfig'.jsonls.setup {
 	flags = lsp_flags,
 }
 
+require'lspconfig'.tailwindcss.setup{
+	on_attach = on_attach,
+	flags = lsp_flags,
+}
+
 --
 --Enable (broadcasting) snippet capability for completion
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -90,13 +95,13 @@ require'lspconfig'.html.setup {
   capabilities = capabilities,
 }
 
-local null_ls = require("null-ls")
+-- local null_ls = require("null-ls")
 
-null_ls.setup({
-    -- sources = {
-        -- null_ls.builtins.formatting.prettier,
-    -- },
-})
+-- null_ls.setup({
+		-- sources = {
+				-- null_ls.builtins.formatting.prettier,
+		-- },
+-- })
 
 -- prettier
 -- local prettier = require("prettier")
