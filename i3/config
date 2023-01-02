@@ -244,6 +244,7 @@ mode "Exit (L)ogout, (R)eboot, (P)oweroff" {
 }
 
 bindsym XF86PowerOff mode "Exit (L)ogout, (R)eboot, (P)oweroff"
+bindsym $super+Shift+q mode "Exit (L)ogout, (R)eboot, (P)oweroff"
 # remove window border
 default_border pixel 1
 default_floating_border pixel 1
