@@ -81,6 +81,7 @@ Plug 'luochen1990/rainbow'
 Plug 'williamboman/mason.nvim'
 Plug 'ThePrimeagen/harpoon'
 Plug 'jose-elias-alvarez/typescript.nvim'
+Plug 'kylechui/nvim-surround'
 call plug#end()
 
 lua require("main")
