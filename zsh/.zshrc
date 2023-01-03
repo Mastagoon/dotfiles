@@ -119,6 +119,6 @@ alias g="git"
 alias e="exit"
 alias c="cd"
 
-source  ~/powerlevel9k/powerlevel9k.zsh-theme
+#source  ~/powerlevel9k/powerlevel9k.zsh-theme
 # includes sensitve information / env-vars etc..
 . ~/.config/zsh/.env
