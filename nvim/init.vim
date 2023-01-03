@@ -82,6 +82,8 @@ Plug 'williamboman/mason.nvim'
 Plug 'ThePrimeagen/harpoon'
 Plug 'jose-elias-alvarez/typescript.nvim'
 Plug 'kylechui/nvim-surround'
+Plug 'kazhala/close-buffers.nvim'
+Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
 call plug#end()
 
 lua require("main")
@@ -98,7 +100,7 @@ nnoremap <C-B> :NvimTreeToggle<CR>
 nnoremap <F5> :NvimTreeRefresh<cr>
 nnoremap <C-i> :PlugInstall<CR>
 nnoremap <Tab> :CybuNext<CR>
-nnoremap <C-w> :enew<bar>bd #<CR>
+" nnoremap <C-w> :enew<bar>bd #<CR>
 
 " fzf
 nnoremap <C-e> :Telescope find_files<CR>

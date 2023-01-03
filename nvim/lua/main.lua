@@ -4,6 +4,7 @@ require("cybu").setup()
 require'colorizer'.setup()
 require('reach').setup({ notifications = true })
 require("nvim-surround").setup({})
+require("bufferline").setup{}
 
 require("custom/tterm")
 require("custom/nvimtree")
@@ -108,3 +109,37 @@ vim.filetype.add({
     astro = "astro",
   },
 })
+
+require('close_buffers').setup({
+  preserve_window_layout = { 'this' , 'nameless'},
+  next_buffer_cmd = function(windows)
+    require('bufferline').cycle(1)
+    local bufnr = vim.api.nvim_get_current_buf()
+
+    for _, window in ipairs(windows) do
+      vim.api.nvim_win_set_buf(window, bufnr)
+    end
+  end,
+})
+
+-- close all other buffers
+vim.api.nvim_set_keymap(
+  'n',
+  '<leader><C-w>',
+  [[<CMD>lua require('close_buffers').delete({type = 'hidden'})<CR>]],
+  { noremap = true, silent = true }
+)
+-- close nameless buffers
+vim.api.nvim_set_keymap(
+  'n',
+  '<leader>tu',
+  [[<CMD>lua require('close_buffers').delete({type = 'nameless'})<CR>]],
+  { noremap = true, silent = false }
+)
+-- close current buffer
+vim.api.nvim_set_keymap(
+  'n',
+  '<C-w>',
+  [[<CMD>lua require('close_buffers').delete({type = 'this'})<CR>]],
+  { noremap = true, silent = false }
+)
