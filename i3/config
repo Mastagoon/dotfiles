@@ -166,6 +166,7 @@ bindsym XF86MonBrightnessDown exec sudo brightnessctl -d "amdgpu_bl0" set 10%-
 
 # screensaver
 bindsym XF86ScreenSaver exec cinnamon-screensaver-command -l
+bindsym $super+p exec cinnamon-screensaver-command -l
 
 # Touchpad controls
 bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
@@ -205,6 +206,7 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id $volumepath/volume -n -t $stat
 bindsym XF86AudioLowerVolume exec --no-startup-id $volumepath/volume -n -t $statuscmd -u $statussig down $volumestep -s $sinkname
 bindsym XF86AudioMute        exec --no-startup-id $volumepath/volume -n -t $statuscmd -u $statussig mute -s $sinkname
 bindsym XF86Calculator exec gnome-calculator
+bindsym $super+Shift+e exec gnome-calculator
 
 
 # Screenshots
