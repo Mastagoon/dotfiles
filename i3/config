@@ -223,7 +223,7 @@ exec --no-startup-id i3-msg '$ws3; exec gnome-terminal'
 exec --no-startup-id blueman-manager --start-minimized
 exec_always compton
 # bg
-exec_always feh --bg-scale /home/masta/Pictures/wallpaper.jpg
+exec_always feh --bg-scale /home/$USER/Pictures/wallpaper.jpg
 
 bindsym $super+e exec thunar
 bindsym $super+v exec diodon
