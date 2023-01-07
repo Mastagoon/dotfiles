@@ -3,7 +3,7 @@ require("toggleterm").setup()
 require("cybu").setup()
 require'colorizer'.setup()
 require('reach').setup({ notifications = true })
-require("nvim-surround").setup({})
+-- require("nvim-surround").setup({})
 require("bufferline").setup{}
 
 require("custom/tterm")

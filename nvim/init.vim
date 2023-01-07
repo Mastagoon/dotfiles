@@ -203,4 +203,4 @@ augroup END
 
 " close tags
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.php,*.jsx"
-let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
+" let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
