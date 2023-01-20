@@ -84,6 +84,7 @@ Plug 'jose-elias-alvarez/typescript.nvim'
 Plug 'kylechui/nvim-surround'
 Plug 'kazhala/close-buffers.nvim'
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
+Plug 'phaazon/mind.nvim'
 call plug#end()
 
 lua require("main")

@@ -15,6 +15,8 @@ require("custom/harpoon")
 require("settings")
 require("remap")
 require("mason").setup()
+require("mind").setup()
+
 
 require('gitsigns').setup {
   signs = {
