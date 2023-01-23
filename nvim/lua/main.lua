@@ -69,7 +69,7 @@ require'nvim-treesitter.configs'.setup {
 	matchup = { enable= true },
 	autopairs = { enable= false },
 	rainbow = { 
-		enable= false,
+		enable= true,
 		extended_mode= true,
 		max_file_lines = 1000,
 	},
@@ -77,7 +77,7 @@ require'nvim-treesitter.configs'.setup {
 --
 	-- }
   -- A list of parser names, or "all"
-  ensure_installed = { "c", "cpp", "typescript","lua", "rust" ,"astro"},
+  ensure_installed = "all",
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,

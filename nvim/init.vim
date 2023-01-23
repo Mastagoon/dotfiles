@@ -85,11 +85,20 @@ Plug 'kylechui/nvim-surround'
 Plug 'kazhala/close-buffers.nvim'
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
 Plug 'phaazon/mind.nvim'
+Plug 'mhartington/oceanic-next'
 call plug#end()
 
 lua require("main")
 
-colorscheme codedark
+" set t_Co=256
+
+syntax enable
+
+colorscheme OceanicNext
+hi Normal guibg=NONE ctermbg=NONE
+hi LineNr guibg=NONE ctermbg=NONE
+hi SignColumn guibg=NONE ctermbg=NONE
+hi EndOfBuffer guibg=NONE ctermbg=NONE
 
 let mapleader = " "
 " if(has("termguicolors"))
