@@ -19,7 +19,11 @@
 :set termbidi
 :set signcolumn=yes:1
 :set termguicolors
+nnoremap <C-d> <NOP>
 let g:do_filetype_lua = 1
+let g:VM_maps = {}
+let g:VM_maps['Find Under']         = '<C-d>'           " replace C-n
+let g:VM_maps['Find Subword Under'] = '<C-d>'           " replace visual C-n
 
 call plug#begin()
 Plug 'kyazdani42/nvim-web-devicons'
@@ -86,6 +90,7 @@ Plug 'kazhala/close-buffers.nvim'
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
 Plug 'phaazon/mind.nvim'
 Plug 'mhartington/oceanic-next'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 call plug#end()
 
 lua require("main")
