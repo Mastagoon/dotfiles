@@ -85,11 +85,11 @@ set $ws2 "2: "
 set $ws3 "3: "
 set $ws4 "4:"
 set $ws5 "5:"
-set $ws6 "6:"
-set $ws7 "7:"
+set $ws6 "6: "
+set $ws7 "7: "
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "9:"
+set $ws10 "9: "
 
 # switch to workspace
 bindsym $super+Tab workspace next
@@ -159,8 +159,8 @@ bar {
 		i3bar_command i3bar -t
     colors {
         background #2f343f
-        statusline #000000
-        separator #000000
+        statusline #2f343f
+        separator #2f343f
 
         # colour of border, background, and text
         focused_workspace       #2f343f #bf616a #d8dee8
@@ -168,7 +168,7 @@ bar {
         inactive_workspace      #2f343f #2f343f #d8dee8
         urgent_workspacei       #2f343f #ebcb8b #2f343f
     }
-		position top
+		position bottom
 		strip_workspace_numbers yes
     status_command ~/.config/bumblebee-status/bumblebee-status -t iceberg-dark-powerline \
 		-m sensors network  pasink battery  datetime \
