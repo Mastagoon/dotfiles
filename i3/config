@@ -73,7 +73,7 @@ bindsym $super+space floating toggle
 # change focus between tiling / floating windows
 bindsym $super+Shift+space focus mode_toggle
 
-gaps inner 20
+gaps inner 5
 
 # Only enable gaps on a workspace when there is at least one container
 
@@ -158,17 +158,17 @@ hide_edge_borders both
 bar {
 		i3bar_command i3bar -t
     colors {
-        background #ffffff00
-        statusline #00000000
-        separator #00000000
+        background #2f343f
+        statusline #000000
+        separator #000000
 
         # colour of border, background, and text
-        focused_workspace       #2f343f00 #bf616a #d8dee8
-        active_workspace        #2f343f00 #2f343f00 #d8dee8
-        inactive_workspace      #2f343f00 #2f343f00 #d8dee8
-        urgent_workspacei       #2f343f00 #ebcb8b #2f343f
+        focused_workspace       #2f343f #bf616a #d8dee8
+        active_workspace        #2f343f #2f343f #d8dee8
+        inactive_workspace      #2f343f #2f343f #d8dee8
+        urgent_workspacei       #2f343f #ebcb8b #2f343f
     }
-		position bottom
+		position top
 		strip_workspace_numbers yes
     status_command ~/.config/bumblebee-status/bumblebee-status -t iceberg-dark-powerline \
 		-m sensors network  pasink battery  datetime \
