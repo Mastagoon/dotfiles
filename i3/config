@@ -2,6 +2,9 @@
 set $super Mod4
 set $alt Mod1
 
+# for_window [class=".*"] border pixel 0
+default_border pixel 0
+
 set $bg-color 	         #2f343f
 set $inactive-bg-color   #2f343f
 set $text-color          #f3f4f5
@@ -70,16 +73,23 @@ bindsym $super+space floating toggle
 # change focus between tiling / floating windows
 bindsym $super+Shift+space focus mode_toggle
 
-set $ws1 "1: Main   "
-set $ws2 "2: Slack   "
-set $ws3 "3: Terminal   "
-set $ws4 "4: Tasks   "
-set $ws5 "5: Discord   "
-set $ws6 "6: Game   "
-set $ws7 "7: Journal   "
+gaps inner 20
+
+# Only enable gaps on a workspace when there is at least one container
+
+# Only enable outer gaps when there is exactly one container
+# smart_gaps inverse_outer
+
+set $ws1 "1: "
+set $ws2 "2: "
+set $ws3 "3: "
+set $ws4 "4:"
+set $ws5 "5:"
+set $ws6 "6:"
+set $ws7 "7:"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10: Music   "
+set $ws10 "9:"
 
 # switch to workspace
 bindsym $super+Tab workspace next
@@ -146,20 +156,23 @@ hide_edge_borders both
 
 # panel
 bar {
-        colors {
-        background #2f343f
-        statusline #2f343f
-        separator #4b5262
+		i3bar_command i3bar -t
+    colors {
+        background #ffffff00
+        statusline #00000000
+        separator #00000000
 
         # colour of border, background, and text
-        focused_workspace       #2f343f #bf616a #d8dee8
-        active_workspace        #2f343f #2f343f #d8dee8
-        inactive_workspace      #2f343f #2f343f #d8dee8
-        urgent_workspacei       #2f343f #ebcb8b #2f343f
+        focused_workspace       #2f343f00 #bf616a #d8dee8
+        active_workspace        #2f343f00 #2f343f00 #d8dee8
+        inactive_workspace      #2f343f00 #2f343f00 #d8dee8
+        urgent_workspacei       #2f343f00 #ebcb8b #2f343f
     }
-        status_command ~/.config/bumblebee-status/bumblebee-status -t iceberg-dark-powerline \
-				-m sensors network  pasink battery  datetime \
-				-p datetime.format="%I:%M %p %d %b" sensors.show_freq=FALSE playerctl.format="{{duration(position)}}/{{duration(mpris:length)}}" playerctl.hide=true
+		position bottom
+		strip_workspace_numbers yes
+    status_command ~/.config/bumblebee-status/bumblebee-status -t iceberg-dark-powerline \
+		-m sensors network  pasink battery  datetime \
+		-p datetime.format="%I:%M %p %d %b" sensors.show_freq=FALSE playerctl.format="{{duration(position)}}/{{duration(mpris:length)}}" playerctl.hide=true
 }
 
 # Sreen brightness controls
@@ -250,5 +263,5 @@ mode "Exit (L)ogout, (R)eboot, (P)oweroff" {
 bindsym XF86PowerOff mode "Exit (L)ogout, (R)eboot, (P)oweroff"
 bindsym $super+Shift+q mode "Exit (L)ogout, (R)eboot, (P)oweroff"
 # remove window border
-default_border pixel 1
+# default_border pixel 1
 default_floating_border pixel 1
