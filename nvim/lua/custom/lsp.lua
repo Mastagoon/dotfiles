@@ -97,6 +97,8 @@ require'lspconfig'.html.setup {
   capabilities = capabilities,
 }
 
+require'lspconfig'.clangd.setup{}
+
 -- local null_ls = require("null-ls")
 
 -- null_ls.setup({
