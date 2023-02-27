@@ -83,7 +83,7 @@ gaps inner 5
 set $ws1 "1: "
 set $ws2 "2: "
 set $ws3 "3: "
-set $ws4 "4:"
+set $ws4 "4: "
 set $ws5 "5:"
 set $ws6 "6: "
 set $ws7 "7: "
@@ -263,5 +263,5 @@ mode "Exit (L)ogout, (R)eboot, (P)oweroff" {
 bindsym XF86PowerOff mode "Exit (L)ogout, (R)eboot, (P)oweroff"
 bindsym $super+Shift+q mode "Exit (L)ogout, (R)eboot, (P)oweroff"
 # remove window border
-# default_border pixel 1
-default_floating_border pixel 1
+default_border pixel 0
+default_floating_border pixel 0
