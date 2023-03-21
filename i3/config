@@ -68,7 +68,7 @@ bindsym $super+f fullscreen toggle
 bindsym $super+s layout toggle split
 
 # toggle tiling / floating
-bindsym $super+space floating toggle
+bindsym $super+Shift+X floating toggle
 
 # change focus between tiling / floating windows
 bindsym $super+Shift+space focus mode_toggle
