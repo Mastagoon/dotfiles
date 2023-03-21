@@ -91,6 +91,7 @@ Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
 Plug 'phaazon/mind.nvim'
 Plug 'mhartington/oceanic-next'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'andweeb/presence.nvim'
 call plug#end()
 
 lua require("main")
