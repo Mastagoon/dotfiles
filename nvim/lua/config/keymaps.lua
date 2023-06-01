@@ -153,8 +153,8 @@ map("n", "<leader>|", "<C-W>v", { desc = "Split window right" })
 map("n", "<C-w>", "<cmd>lua require('close_buffers').delete({type='this'})<cr>")
 
 -- comments
-map("n","", "<cmd>call NERDComment(0,'toggle')<cr>", {desc="Toggle comment selected"})
-map("v", "", "<cmd>call NERDcommenter#Comment(0, 'invert')<cr>", {desc = "Comment selected"})
+--map("n","", "<cmd>call NERDComment(0,'toggle')<cr>", {desc="Toggle comment selected"})
+-- map("v","", "<cmd>call nerdcommenter#Comment('x', 'toggle')<cr>", {desc = "Comment selected"})
 
 -- lsp
 map("n", "<leader>a", vim.lsp.buf.code_action, { desc = "Code Action" })
