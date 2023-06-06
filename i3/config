@@ -260,8 +260,17 @@ mode "Exit (L)ogout, (R)eboot, (P)oweroff" {
         bindsym Escape mode "default"
 }
 
+
 bindsym XF86PowerOff mode "Exit (L)ogout, (R)eboot, (P)oweroff"
 bindsym $super+Shift+q mode "Exit (L)ogout, (R)eboot, (P)oweroff"
 # remove window border
 default_border pixel 0
 default_floating_border pixel 0
+
+
+# disable keyboard
+mode "s" {
+    bindsym $super+Shift+u mode "default"
+}
+
+bindsym $super+Shift+o  mode "s"
