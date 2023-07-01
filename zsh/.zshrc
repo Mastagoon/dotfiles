@@ -119,6 +119,10 @@ alias g="git"
 alias e="exit"
 alias c="cd"
 
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
 #source  ~/powerlevel9k/powerlevel9k.zsh-theme
 # includes sensitve information / env-vars etc..
 . ~/.config/zsh/.env
