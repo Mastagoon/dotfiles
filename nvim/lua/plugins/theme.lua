@@ -1,3 +1,0 @@
-return {
-  { "mhartington/oceanic-next" },
-}
