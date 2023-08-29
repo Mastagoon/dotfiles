@@ -128,3 +128,8 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 #source  ~/powerlevel9k/powerlevel9k.zsh-theme
 # includes sensitve information / env-vars etc..
 . ~/.config/zsh/.env
+
+# pnpm
+export PNPM_HOME="/home/sahal/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
