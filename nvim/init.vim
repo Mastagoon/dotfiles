@@ -39,8 +39,6 @@ Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'nvim-telescope/telescope-ui-select.nvim'
 Plug 'airblade/vim-gitgutter'
 Plug 'nvim-lua/completion-nvim'
-" Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' }
-" Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
 Plug 'xiyaowong/nvim-transparent'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'toppair/reach.nvim'
@@ -91,7 +89,11 @@ Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
 Plug 'phaazon/mind.nvim'
 Plug 'mhartington/oceanic-next'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'andweeb/presence.nvim'
+Plug 'folke/noice.nvim'
+Plug 'MunifTanjim/nui.nvim'
+Plug 'goolord/alpha-nvim'
+Plug 'folke/persistence.nvim'
+Plug 'mrded/nvim-lsp-notify'
 call plug#end()
 
 lua require("main")
@@ -165,7 +167,7 @@ nnoremap <leader>hh :ReachOpen buffers<CR>
 "
 " airline
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
 let g:airline#extensions#tagbar#enabled = 1
 
 " coc
