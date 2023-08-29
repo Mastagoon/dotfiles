@@ -26,7 +26,6 @@ let g:VM_maps['Find Under']         = '<C-d>'           " replace C-n
 let g:VM_maps['Find Subword Under'] = '<C-d>'           " replace visual C-n
 
 call plug#begin()
-Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'tomasiser/vim-code-dark'
 Plug 'christoomey/vim-tmux-navigator'
@@ -94,6 +93,7 @@ Plug 'MunifTanjim/nui.nvim'
 Plug 'goolord/alpha-nvim'
 Plug 'folke/persistence.nvim'
 Plug 'mrded/nvim-lsp-notify'
+Plug 'nvim-tree/nvim-web-devicons'
 call plug#end()
 
 lua require("main")

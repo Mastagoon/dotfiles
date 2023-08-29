@@ -1,7 +1,7 @@
 " Create dfault mappings
 let g:NERDCreateDefaultMappings = 0
-nnoremap <silent>  :call NERDComment(0, 'toggle')<CR>
-vnoremap <silent>  :call nerdcommenter#Comment(0, 'invert')<CR>
+nnoremap <silent>  :call NERDComment(0, 'toggle')<CR>
+vnoremap <silent>  :call nerdcommenter#Comment(0, 'invert')<CR>
 
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
