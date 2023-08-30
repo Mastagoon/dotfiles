@@ -4,7 +4,6 @@ require("cybu").setup()
 require'colorizer'.setup()
 require('reach').setup({ notifications = true })
 -- require("nvim-surround").setup({})
-require("bufferline").setup{}
 require('bufferline').setup {
 	options = {
 			mode = "buffers", -- set to "tabs" to only show tabpages instead
@@ -73,7 +72,7 @@ require("settings")
 require("remap")
 require("mason").setup()
 require("mind").setup()
-require("noice").setup()
+--require("noice").setup()
 require("persistence").setup()
 
 require('gitsigns').setup {
