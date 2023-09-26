@@ -94,6 +94,7 @@ Plug 'goolord/alpha-nvim'
 Plug 'folke/persistence.nvim'
 Plug 'mrded/nvim-lsp-notify'
 Plug 'nvim-tree/nvim-web-devicons'
+Plug 'rcarriga/nvim-notify'
 call plug#end()
 
 lua require("main")
