@@ -95,10 +95,6 @@ require'lspconfig'.svelte.setup{}
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-require'lspconfig'.html.setup {
-  capabilities = capabilities,
-}
-
 require'lspconfig'.clangd.setup{}
 
 -- local null_ls = require("null-ls")
