@@ -137,3 +137,10 @@ export PATH=$PATH:~/Desktop/android-studio/bin
 export PNPM_HOME="/home/sahal/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+# bun completions
+[ -s "/home/sahal/.bun/_bun" ] && source "/home/sahal/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
