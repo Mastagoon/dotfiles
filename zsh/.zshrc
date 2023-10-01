@@ -139,7 +139,7 @@ export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
 # bun completions
-[ -s "$HOME/.bun/_bun" ] && source "/home/masta/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
