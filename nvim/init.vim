@@ -64,6 +64,8 @@ Plug 'johann2357/nvim-smartbufs'
 Plug 'pantharshit00/vim-prisma'
 Plug 'tyrannicaltoucan/vim-deep-space'
 Plug 'neovim/nvim-lspconfig'
+Plug 'jose-elias-alvarez/null-ls.nvim'
+Plug 'MunifTanjim/prettier.nvim'
 Plug 'wakatime/vim-wakatime'
 " autocompletion 7 snipps
 Plug 'hrsh7th/cmp-nvim-lsp'
