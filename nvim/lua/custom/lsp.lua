@@ -52,6 +52,9 @@ require('lspconfig')['svelte'].setup{
 		on_attach = on_attach,
 		flags = lsp_flags,
 }
+
+require'lspconfig'.gopls.setup{}
+
 require("typescript").setup({
     disable_commands = false, -- prevent the plugin from creating Vim commands
     debug = false, -- enable debug logging for commands
