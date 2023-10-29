@@ -94,6 +94,8 @@ require'lspconfig'.dartls.setup{}
 
 require'lspconfig'.svelte.setup{}
 
+require'lspconfig'.gopls.setup{}
+
 --
 --Enable (broadcasting) snippet capability for completion
 local capabilities = vim.lsp.protocol.make_client_capabilities()
