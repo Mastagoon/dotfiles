@@ -233,6 +233,7 @@ bindsym $super+Shift+s exec --no-startup-id ~/.config/i3/i3-scripts/take-screens
 bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
 
 for_window [class="Gnome-calculator"] floating enable
+for_window [class="Palette"] floating enable
 
 exec discord
 exec todoist

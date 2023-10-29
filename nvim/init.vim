@@ -142,7 +142,10 @@ nnoremap <leader><C-Q> :ToggleTermToggleAll<CR>
 map <C-v> <Nop>
 
 " fugitive
-nnoremap <leader>gg :G<CR>
+" nnoremap <leader>gg :G<CR>
+nnoremap <leader>gg :Gvdiffsplit!<CR>
+nnoremap <leader>gl :diffget //3<CR>
+nnoremap <leader>gh :diffget //2<CR>
 
 "lspconfig
 " source $HOME/.config/nvim/config/lsp.vim
