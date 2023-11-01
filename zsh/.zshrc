@@ -145,5 +145,5 @@ export PATH="$PNPM_HOME:$PATH"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# go
+#golang
 export PATH=$PATH:/usr/local/go/bin
