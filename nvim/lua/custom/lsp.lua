@@ -53,7 +53,16 @@ require('lspconfig')['svelte'].setup{
 		flags = lsp_flags,
 }
 
-require'lspconfig'.gopls.setup{}
+require'lspconfig'.gopls.setup{
+	on_attach = on_attach,
+	flags = lsp_flags,
+	settings = {
+		gopls = {
+			completeUnimported = true,
+			usePlaceholders = true,
+		}
+	}
+}
 
 require("typescript").setup({
     disable_commands = false, -- prevent the plugin from creating Vim commands
@@ -137,6 +146,10 @@ null_ls.setup({
       end, { buffer = bufnr, desc = "[lsp] format" })
     end
   end,
+	sources= {
+		null_ls.builtins.formatting.prettierd,
+		null_ls.builtins.formatting.goimports,
+	}
 })
 
 -- prettier
