@@ -13,6 +13,8 @@ lsp_zero.on_attach(function(_, bufnr)
   vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
   vim.keymap.set("n", "<leader>wr", function() vim.lsp.buf.rename() end, opts)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+
+  lsp_zero.buffer_autoformat()
 end)
 
 lsp_zero.format_on_save({
@@ -24,25 +26,58 @@ lsp_zero.format_on_save({
     ['tsserver'] = {'javascript', 'typescript'},
     ['rust_analyzer'] = {'rust'},
 		["goimports"] = {"go"},
-		["gopls"] = {"go"},
-		["html"] = {"html"}
+		["gopls"] = {"go", "templ"},
+		["html"] = {"html", "templ"},
+		["templ"] = {"templ"}
   }
 })
 
 require'lspconfig'.htmx.setup{
-		on_attach = lsp_zero.on_attach
+		on_attach = lsp_zero.on_attach,
+		filetypes = {"html", "templ"},
+}
+
+require'lspconfig'.gopls.setup{
+		on_attach = lsp_zero.on_attach,
+		filetypes = {"go"},
+}
+
+require('lspconfig.configs').templ = {
+  default_config = {
+    cmd = {"templ", "lsp"},
+    filetypes = {'templ'},
+    root_dir = require('lspconfig').util.root_pattern("go.mod"),
+    settings = {},
+  };
+}
+
+require'lspconfig'.templ.setup{
+		on_attach = lsp_zero.on_attach,
+		filetypes = {"templ"},
+}
+
+require'lspconfig'.tailwindcss.setup{
+	on_attach = lsp_zero.on_atach,
+	filetypes = {"html", "templ"},
+	init_options = {
+		userLanguages = {
+				templ = "html"
+		}
+	}
 }
 
 require('mason').setup({})
+
+
 require('mason-lspconfig').setup({
-  ensure_installed = {'tsserver', 'rust_analyzer', 'gopls'},
-  handlers = {
-    lsp_zero.default_setup,
-    lua_ls = function()
-      local lua_opts = lsp_zero.nvim_lua_ls()
-      require('lspconfig').lua_ls.setup(lua_opts)
-    end,
-  }
+	ensure_installed = {'tsserver', 'rust_analyzer', 'gopls', "htmx", "templ"},
+	handlers = {
+		lsp_zero.default_setup,
+		lua_ls = function()
+			local lua_opts = lsp_zero.nvim_lua_ls()
+			require('lspconfig').lua_ls.setup(lua_opts)
+		end,
+	}
 })
 
 local cmp = require('cmp')
