@@ -275,3 +275,7 @@ mode "s" {
 }
 
 bindsym $super+Shift+o  mode "s"
+
+# multiple monitors
+bindsym $super+Shift+1 move workspace to output left
+bindsym $super+Shift+2 move workspace to output left

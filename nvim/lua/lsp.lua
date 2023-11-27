@@ -100,7 +100,7 @@ require 'lspconfig'.templ.setup {
 
 require 'lspconfig'.tailwindcss.setup {
 	on_attach = lsp_zero.on_atach,
-	filetypes = { "html", "templ" },
+	filetypes = { "html", "templ", "jsx", "javascriptreact", "typescriptreact" },
 	init_options = {
 		userLanguages = {
 			templ = "html"
