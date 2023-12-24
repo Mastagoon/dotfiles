@@ -271,7 +271,8 @@ default_floating_border pixel 0
 
 # disable keyboard
 mode "s" {
-    bindsym $super+Shift+u mode "default"
+    bindsym Alt+Shift+u mode "default"
+    bindsym Escape mode "default"
 }
 
 bindsym $super+Shift+o  mode "s"
@@ -279,3 +280,30 @@ bindsym $super+Shift+o  mode "s"
 # multiple monitors
 bindsym $super+Shift+1 move workspace to output left
 bindsym $super+Shift+2 move workspace to output left
+
+# alt mode
+bindsym $alt+space mode "Alt Mode"
+
+mode "Alt Mode" {
+		bindsym $alt+1 workspace $ws1
+		bindsym $alt+2 workspace $ws2
+		bindsym $alt+3 workspace $ws3
+		bindsym $alt+4 workspace $ws4
+		bindsym $alt+5 workspace $ws5
+		bindsym $alt+6 workspace $ws6
+		bindsym $alt+7 workspace $ws7
+		bindsym $alt+8 workspace $ws8
+		bindsym $alt+9 workspace $ws9
+		bindsym $alt+0 workspace $ws10
+		bindsym $alt+Return exec gnome-terminal
+		# start dmenu (a program launcher)
+		bindsym $alt+Shift+d exec i3-dmenu-desktop --dmenu="dmenu -i -fn 'Noto Sans:size=8'"
+		# bindsym $alt+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'Noto Sans 8'
+		bindsym $alt+d exec /home/$USER/.config/rofi/1080p/launchers/slate/launcher.sh
+
+		# common apps keybinds
+		bindsym $alt+Shift+w exec firefox
+		bindsym $alt+Shift+f exec thunar;workspace 3;focus
+		bindsym $alt+Shift+g exec geany
+		bindsym Escape mode "default"
+}
