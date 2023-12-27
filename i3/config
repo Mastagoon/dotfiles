@@ -305,5 +305,7 @@ mode "Alt Mode" {
 		bindsym $alt+Shift+w exec firefox
 		bindsym $alt+Shift+f exec thunar;workspace 3;focus
 		bindsym $alt+Shift+g exec geany
+		bindsym $alt+f fullscreen toggle
+		bindsym $alt+Shift+r restart
 		bindsym Escape mode "default"
 }
