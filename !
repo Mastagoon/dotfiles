@@ -307,6 +307,7 @@ mode "Alt Mode" {
 		bindsym $alt+Shift+g exec geany
 		bindsym $alt+f fullscreen toggle
 		bindsym $alt+Shift+r restart
+		bindsym Pri3t exec --no-startup-id ~/.config/i3/i3-scripts/take-full-screenshot.sh
 		bindsym $alt+Shift+s exec --no-startup-id ~/.config/i3/i3-scripts/take-screenshot.sh
 		bindsym Escape mode "default"
 }

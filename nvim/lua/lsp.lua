@@ -79,6 +79,20 @@ require 'lspconfig'.htmx.setup {
 	filetypes = { "html", "templ" },
 }
 
+require 'lspconfig'.clangd.setup {
+	on_attach = lsp_zero.on_attach,
+	cmd = { "clangd",
+		"--header-insertion=never",
+		"--limit-references=100",
+		"--limit-results=20",
+		"-j=8",
+		"--malloc-trim",
+		"--background-index",
+		"--pch-storage=memory",
+
+	},
+}
+
 require 'lspconfig'.gopls.setup {
 	on_attach = lsp_zero.on_attach,
 	filetypes = { "go" },
