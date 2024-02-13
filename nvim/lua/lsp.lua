@@ -69,7 +69,7 @@ lsp_zero.on_attach(function(_, bufnr)
 	vim.keymap.set("n", "<leader>wr", function() vim.lsp.buf.rename() end, opts)
 	vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 
-	lsp_zero.buffer_autoformat()
+	-- lsp_zero.buffer_autoformat()
 end)
 
 
@@ -131,7 +131,7 @@ cmp.setup({
 		{ name = 'nvim_lsp' },
 		{ name = 'nvim_lua' },
 	},
-	formatting = lsp_zero.cmp_format(),
+	-- formatting = lsp_zero.cmp_format(),
 	mapping = cmp.mapping.preset.insert({
 		['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
 		['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
