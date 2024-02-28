@@ -113,7 +113,7 @@ let mapleader = " "
 	" set termguicolors
 " endif
 
-nnoremap <C-a> :NvimTreeFindFile<cr>
+nnoremap <A-a> :NvimTreeFindFile<cr>
 nnoremap <C-B> :NvimTreeToggle<CR>
 nnoremap <F5> :NvimTreeRefresh<cr>
 nnoremap <C-i> :PlugInstall<CR>

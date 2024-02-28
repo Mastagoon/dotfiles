@@ -235,6 +235,7 @@ bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t ima
 for_window [class="Gnome-calculator"] floating enable
 for_window [class="Palette"] floating enable
 
+exec firefox
 exec discord
 exec todoist
 exec --no-startup-id i3-msg '$ws3; exec gnome-terminal'
