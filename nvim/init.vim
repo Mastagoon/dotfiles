@@ -86,6 +86,7 @@ Plug 'mrded/nvim-lsp-notify'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'rcarriga/nvim-notify'
 Plug 'othree/html5.vim'
+Plug 'folke/zen-mode.nvim'
 
 " Autocompletion
 Plug 'hrsh7th/nvim-cmp'
