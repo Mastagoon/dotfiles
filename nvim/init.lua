@@ -813,7 +813,7 @@ require("lazy").setup({
 })
 
 -- NOTE: custom mappings
-vim.keymap.set("n", "<leader>a", ":lua MiniFiles.open()<CR>")
+vim.keymap.set("n", "<leader>a", ":lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>")
 vim.keymap.set("n", "<C-s>", ":w<CR>")
 
 -- The line beneath this is called `modeline`. See `:help modeline`
