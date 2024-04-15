@@ -102,22 +102,55 @@ cmp.setup {
 
 }
 
-local lspkind = require('lspkind')
-cmp.setup {
-  formatting = {
-    format = function(entry, vim_item)
-      if vim.tbl_contains({ 'path' }, entry.source.name) then
-        local icon, hl_group = require('vim-devicons').get_icon(entry:get_completion_item().label)
-        if icon then
-          vim_item.kind = icon
-          vim_item.kind_hl_group = hl_group
-          return vim_item
-        end
-      end
-      return lspkind.cmp_format({ with_text = true })(entry, vim_item)
-    end
-  }
-}
+require('lspkind').init({
+    -- DEPRECATED (use mode instead): enables text annotations
+    --
+    -- default: true
+    -- with_text = true,
+
+    -- defines how annotations are shown
+    -- default: symbol
+    -- options: 'text', 'text_symbol', 'symbol_text', 'symbol'
+    mode = 'symbol_text',
+
+    -- default symbol map
+    -- can be either 'default' (requires nerd-fonts font) or
+    -- 'codicons' for codicon preset (requires vscode-codicons font)
+    --
+    -- default: 'default'
+    preset = 'codicons',
+
+    -- override preset symbols
+    --
+    -- default: {}
+    symbol_map = {
+      Text = "󰉿",
+      Method = "󰆧",
+      Function = "󰊕",
+      Constructor = "",
+      Field = "󰜢",
+      Variable = "󰀫",
+      Class = "󰠱",
+      Interface = "",
+      Module = "",
+      Property = "󰜢",
+      Unit = "󰑭",
+      Value = "󰎠",
+      Enum = "",
+      Keyword = "󰌋",
+      Snippet = "",
+      Color = "󰏘",
+      File = "󰈙",
+      Reference = "󰈇",
+      Folder = "󰉋",
+      EnumMember = "",
+      Constant = "󰏿",
+      Struct = "󰙅",
+      Event = "",
+      Operator = "󰆕",
+      TypeParameter = "",
+    },
+})
 
 -- cmp.setup({
     -- enabled = function()

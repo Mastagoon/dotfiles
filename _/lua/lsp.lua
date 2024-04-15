@@ -1,6 +1,6 @@
 local null_ls = require("null-ls")
 
-local group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false })
+-- local group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false })
 local event = "BufWritePre" -- or "BufWritePost"
 local async = event == "BufWritePost"
 
@@ -12,15 +12,15 @@ null_ls.setup({
 			end, { buffer = bufnr, desc = "[lsp] format" })
 
 			-- format on save
-			vim.api.nvim_clear_autocmds({ buffer = bufnr, group = group })
-			vim.api.nvim_create_autocmd(event, {
-				buffer = bufnr,
-				group = group,
-				callback = function()
-					vim.lsp.buf.format({ bufnr = bufnr, async = async })
-				end,
-				desc = "[lsp] format on save",
-			})
+			-- vim.api.nvim_clear_autocmds({ buffer = bufnr, group = group })
+			-- vim.api.nvim_create_autocmd(event, {
+				-- buffer = bufnr,
+				-- group = group,
+				-- callback = function()
+					-- vim.lsp.buf.format({ bufnr = bufnr, async = async })
+				-- end,
+				-- desc = "[lsp] format on save",
+			-- })
 		end
 
 		if client.supports_method("textDocument/rangeFormatting") then
@@ -69,7 +69,7 @@ lsp_zero.on_attach(function(_, bufnr)
 	vim.keymap.set("n", "<leader>wr", function() vim.lsp.buf.rename() end, opts)
 	vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 
-	lsp_zero.buffer_autoformat()
+	-- lsp_zero.buffer_autoformat()
 end)
 
 
@@ -145,7 +145,7 @@ cmp.setup({
 		{ name = 'nvim_lsp' },
 		{ name = 'nvim_lua' },
 	},
-	formatting = lsp_zero.cmp_format(),
+	-- formatting = lsp_zero.cmp_format(),
 	mapping = cmp.mapping.preset.insert({
 		['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
 		['<C-n>'] = cmp.mapping.select_next_item(cmp_select),

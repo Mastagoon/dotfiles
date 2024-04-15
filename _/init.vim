@@ -86,6 +86,7 @@ Plug 'mrded/nvim-lsp-notify'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'rcarriga/nvim-notify'
 Plug 'othree/html5.vim'
+Plug 'folke/zen-mode.nvim'
 
 " Autocompletion
 Plug 'hrsh7th/nvim-cmp'
@@ -113,7 +114,7 @@ let mapleader = " "
 	" set termguicolors
 " endif
 
-nnoremap <C-a> :NvimTreeFindFile<cr>
+nnoremap <A-a> :NvimTreeFindFile<cr>
 nnoremap <C-B> :NvimTreeToggle<CR>
 nnoremap <F5> :NvimTreeRefresh<cr>
 nnoremap <C-i> :PlugInstall<CR>
