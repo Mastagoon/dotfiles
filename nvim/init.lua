@@ -840,6 +840,9 @@ require("lazy").setup({
 			--    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
 		end,
 	},
+	{
+		"wakatime/vim-wakatime",
+	},
 
 	-- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
 	-- init.lua. If you want these files, they are in the repository, so you can just download them and
@@ -885,6 +888,7 @@ require("lazy").setup({
 -- NOTE: custom mappings
 vim.keymap.set("n", "<leader>a", ":lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>")
 vim.keymap.set("n", "<C-s>", ":w<CR>")
+vim.keymap.set("i", "<C-s>", "<ESC>:w<CR>")
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
