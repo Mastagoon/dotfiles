@@ -123,7 +123,8 @@ alias c="cd"
 
 export JAVA_HOME=/usr/lib/jvm/jdk-17-oracle-x64
 
-export ANDROID_HOME=$HOME/Android/Sdk
+export ANDROID_HOME=$HOME/Android
+export ANDROID_SDK_HOME=$ANDROID_HOME/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/cmdline-tools
@@ -148,3 +149,4 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 #golang
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/go/bin
+export PATH=$PATH:$HOME/android-studio/bin
