@@ -123,8 +123,7 @@ alias c="cd"
 
 export JAVA_HOME=/usr/lib/jvm/jdk-17-oracle-x64
 
-export ANDROID_HOME=$HOME/Android
-export ANDROID_SDK_HOME=$ANDROID_HOME/Sdk
+export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/cmdline-tools
