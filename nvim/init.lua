@@ -471,6 +471,9 @@ require("lazy").setup({
 				--
 				-- But for many setups, the LSP (`tsserver`) will work just fine
 				tsserver = {},
+				emmet_language_server = {
+					filetypes = { "templ" },
+				},
 				templ = {
 					filetypes = { "templ" },
 				},
