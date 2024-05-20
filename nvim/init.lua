@@ -17,6 +17,7 @@ vim.opt.number = true
 
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
+vim.filetype.add({ extension = { templ = "templ" } })
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
 vim.opt.relativenumber = true
@@ -470,6 +471,12 @@ require("lazy").setup({
 				--
 				-- But for many setups, the LSP (`tsserver`) will work just fine
 				tsserver = {},
+				emmet_language_server = {
+					filetypes = { "templ" },
+				},
+				templ = {
+					filetypes = { "templ" },
+				},
 				--
 
 				lua_ls = {
@@ -843,6 +850,9 @@ require("lazy").setup({
 	},
 	{
 		"wakatime/vim-wakatime",
+	},
+	{
+		"nvim-treesitter/nvim-treesitter-context",
 	},
 
 	-- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the

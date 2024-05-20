@@ -148,3 +148,4 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 #golang
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/go/bin
+export PATH=$PATH:$HOME/android-studio/bin
