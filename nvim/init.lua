@@ -701,7 +701,7 @@ require("lazy").setup({
 					-- Accept ([y]es) the completion.
 					--  This will auto-import if your LSP supports it.
 					--  This will expand snippets if the LSP sent a snippet.
-					-- ["<C-y>"] = cmp.mapping.confirm({ select = true }),
+					["<leader><C-y>"] = cmp.mapping.confirm({ select = true }),
 					["<CR>"] = cmp.mapping.confirm({ select = true }),
 
 					-- Manually trigger a completion from nvim-cmp.
@@ -854,7 +854,6 @@ require("lazy").setup({
 	{
 		"nvim-treesitter/nvim-treesitter-context",
 	},
-
 	-- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
 	-- init.lua. If you want these files, they are in the repository, so you can just download them and
 	-- place them in the correct locations.
