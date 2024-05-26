@@ -4,6 +4,8 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+vim.opt.conceallevel = 1
+
 -- Set to true if you have a Nerd Font installed
 vim.g.have_nerd_font = true
 
